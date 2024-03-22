@@ -16,13 +16,42 @@ const viewer = new Cesium.Viewer("cesiumContainer", {
 
 // Define refined waypoints for the ship's journey avoiding land.
 const waypoints = [
-    { name: "Hawaii", longitude: -157.8583, latitude: 21.3069, description: "<h2>Aloha!</h2><p>Welcome to the beautiful islands of <strong>Hawaii</strong>.</p><img src='hawaii_image_url' alt='Hawaii'>." },
-    { name: "Pacific Point 1", longitude: -170, latitude: 25, description: "You've reached Pacific Point 1, navigating through the vast Pacific Ocean." },
-    { name: "Pacific Point 2", longitude: 160, latitude: 30, description: "This is Pacific Point 2, closer to the Asian continent." },
-    { name: "Pacific Point 3", longitude: 150, latitude: 35, description: "Approaching Japan: Pacific Point 3 achieved." },
-    { name: "Japan", longitude: 139.6503, latitude: 35.6762, description: "Land of the Rising Sun: Welcome to Japan." },
-    // Add descriptions for other waypoints similarly...
+    { name: "Hawaii", longitude: -157.8583, latitude: 21.3069, description: "Aloha! Welcome to the beautiful islands of Hawaii.", type: "Interest" },
+    { name: "Pacific Point 1", longitude: -170, latitude: 25, description: "You've reached Pacific Point 1, navigating through the vast Pacific Ocean.", type: "Road" },
+    { name: "Pacific Point 2", longitude: 160, latitude: 30, description: "This is Pacific Point 2, closer to the Asian continent.", type: "Road" },
+    { name: "Pacific Point 3", longitude: 150, latitude: 35, description: "Approaching Japan: Pacific Point 3 achieved.", type: "Road" },
+    { name: "Japan", longitude: 139.6503, latitude: 35.6762, description: "Land of the Rising Sun: Welcome to Japan.", type: "Interest" },
+    
+    // Waypoints from Japan to Malaysia
+    { name: "To Malaysia 1", longitude: 135, latitude: 25, description: "Leaving the Japanese archipelago, heading towards Southeast Asia.", type: "Road" },
+    { name: "To Malaysia 2", longitude: 125, latitude: 15, description: "You are now over the warm waters of the Philippine Sea.", type: "Road" },
+    { name: "To Malaysia 3", longitude: 115, latitude: 10, description: "Approaching the equatorial line, the climate becomes warmer.", type: "Road" },
+    { name: "Malaysia", longitude: 101.9758, latitude: 4.2105, description: "Selamat Datang ke Malaysia - Welcome to Malaysia, a country of natural beauty.", type: "Interest" },
+    
+    // Waypoints from Malaysia to Thailand
+    { name: "To Thailand 1", longitude: 103, latitude: 6, description: "Sailing past the Malaysian coast, entering the Gulf of Thailand.", type: "Road" },
+    { name: "Thailand", longitude: 100.9925, latitude: 15.8700, description: "Welcome to Thailand, the land of smiles, culture, and bustling markets.", type: "Interest" },
+    
+    // Waypoints from Thailand to China
+    { name: "To China 1", longitude: 105, latitude: 20, description: "Moving towards the vast and historic lands of China.", type: "Road" },
+    { name: "China", longitude: 116.4074, latitude: 39.9042, description: "Welcome to China, a nation with a profound history and bustling modern cities.", type: "Interest" },
+    
+    // Waypoints from China to India
+    { name: "To India 1", longitude: 100, latitude: 30, description: "Crossing over the rugged terrains leading to South Asia.", type: "Road" },
+    { name: "To India 2", longitude: 90, latitude: 25, description: "Approaching the subcontinental lands, marked by rivers and mountains.", type: "Road" },
+    { name: "India", longitude: 78.9629, latitude: 20.5937, description: "Welcome to India, a vibrant country with a rich tapestry of culture, history, and landscapes.", type: "Interest" },
+    
+    // Waypoints from India to Middle East
+    { name: "To Middle East 1", longitude: 70, latitude: 25, description: "Heading towards the Middle East, a region of ancient civilizations and rich history.", type: "Road" },
+    { name: "Middle East", longitude: 54.5260, latitude: 23.4241, description: "Welcome to the Middle East, a crossroads of the world's cultures and religions.", type: "Interest" },
+    
+    // Waypoints from Middle East to Italy
+    { name: "To Italy 1", longitude: 45, latitude: 30, description: "Traversing the Mediterranean towards the European continent.", type: "Road" },
+    { name: "To Italy 2", longitude: 35, latitude: 35, description: "Closing in on the Italian peninsula, with its rich history and culinary delights.", type: "Road" },
+    { name: "Italy", longitude: 12.5674, latitude: 41.8719, description: "Benvenuti in Italia - Welcome to Italy, a country of art, architecture, and fashion.", type: "Interest]"}
+
 ];
+
 
 let lastNearestWaypoint = null; // This will keep track of the last nearest waypoint
 
@@ -33,7 +62,7 @@ var shipModel = viewer.entities.add({
     model: {
         uri: 'https://raw.githubusercontent.com/jgzalez/FlutterAct1/master/yatch_II.glb',
         minimumPixelSize: 128,
-        maximumScale: 10000
+        maximumScale: 5000
     }
 });
 
@@ -64,7 +93,7 @@ shipModel.orientation = new Cesium.VelocityOrientationProperty(positionProperty)
 // En vez de eso, usa el siguiente código:
 // Additional logic to ensure the camera follows the ship if needed:
 var baseDistance = 200000; // Horizontal distance from the camera to the ship
-var baseHeight = 4000000;    // Height of the camera from the ship, adjust this for a better angle
+var baseHeight = 6500000;    // Height of the camera from the ship, adjust this for a better angle
 var startAngle = -Math.PI / 4; // Starting angle for the camera's horizontal position relative to the ship
 var angleVariation = Math.PI / 18; // Reduced range of the angle variation for smoother effect
 
@@ -164,7 +193,7 @@ function checkWaypointProximityAndSelect() {
     console.log(`Nearest waypoint: ${nearestWaypoint ? nearestWaypoint.name : "None"}, Distance: ${nearestDistance}`);
 
     // Only update the infobox if the nearest waypoint has changed
-    if (nearestWaypoint && nearestDistance < 30000 && lastNearestWaypoint !== nearestWaypoint) {  // Ensure this threshold matches your needs
+    if (nearestWaypoint && nearestDistance < 300000 && lastNearestWaypoint !== nearestWaypoint) {  // Ensure this threshold matches your needs
         var waypointEntity = viewer.entities.getById(`waypoint-${nearestWaypoint.name}`);
         if (waypointEntity) {
             console.log(`Changing selected entity to: ${waypointEntity.name}`);
@@ -180,33 +209,52 @@ function checkWaypointProximityAndSelect() {
 // Regularly check for proximity to update the infoBox accordingly
 setInterval(checkWaypointProximityAndSelect, 1000);  // Check every second
 
-// Call this function regularly to check for proximity to waypoints
-setInterval(checkWaypointProximityAndSelect, 1000); // Check every second
-
-
 function updateWaypointEntities() {
     waypoints.forEach(waypoint => {
+        // Create a unique id for each waypoint entity for identification
         var id = `waypoint-${waypoint.name}`;
+
+        // Check if the entity already exists, if not, create a new one
         var existingEntity = viewer.entities.getById(id);
         if (!existingEntity) {
+            // Default values for interest waypoints
+            let pointColor = Cesium.Color.RED;
+            let pixelSize = 10;
+            let showLabel = true;
+            
+            // Adjustments for road waypoints
+            if (waypoint.type === "Road") {
+                pointColor = Cesium.Color.WHITE;
+                pixelSize = 5;
+                showLabel = false;  // Don't show label for road waypoints
+            }
+
             viewer.entities.add({
                 id: id,
                 name: waypoint.name,
                 position: Cesium.Cartesian3.fromDegrees(waypoint.longitude, waypoint.latitude),
                 point: {
-                    pixelSize: 10,
-                    color: Cesium.Color.RED
+                    pixelSize: pixelSize,
+                    color: pointColor
                 },
-                description: waypoint.description
+                label: showLabel ? {
+                    text: waypoint.name,
+                    font: '14pt monospace',
+                    fillColor: Cesium.Color.WHITE,
+                    style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+                    outlineWidth: 2,
+                    verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
+                    pixelOffset: new Cesium.Cartesian2(0, -10)
+                } : undefined,
+                description: showLabel ? waypoint.description : undefined  // Set description only for interest waypoints
             });
         }
     });
 }
+
+// Call the function to update entities on the globe
 updateWaypointEntities();
 
-
-// Initial update for waypoint entities
-updateWaypointEntities();
 
 // Call checkWaypointProximity periodically, for example, using setInterval
 setInterval(() => {
