@@ -1,0 +1,35 @@
+<style>
+  
+@import url(../templates/bucket.css);
+.cesium-infoBox {
+    background-color: navy; /* Change to your desired background color */
+    color: white; /* Change to your desired text color */
+}
+
+.cesium-infoBox .cesium-infoBox-title {
+    background-color: darkblue; /* Change to your desired title background color */
+}
+  
+.cesium-viewer .cesium-widget .cesium-infoBox {
+    top: auto; /* Reset the default positioning */
+    bottom: 25px; /* Distance from the bottom of the viewer */
+    left: 25px; /* Distance from the left side of the viewer */
+    right: auto; /* Reset the default positioning */
+}
+  
+  .cesium-viewer .cesium-infoBox {
+    position: fixed; /* Use fixed positioning relative to the viewport */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust to exact center */
+    z-index: 10; /* Ensure it's above other elements */
+}
+  
+    </style>
+
+
+    <div id="cesiumContainer" class="fullSize"></div>
+    <div id="loadingOverlay"><h1>Loading...</h1></div>
+    <div id="toolbar"></div>
+    <img id="htmlOverlay" style="position: absolute" src="../images/Cesium_Logo_overlay.png">
+    
