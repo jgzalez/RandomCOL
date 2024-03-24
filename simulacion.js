@@ -22,34 +22,140 @@ const waypoints = [
     { name: "Pacific Point 3", longitude: 150, latitude: 35, description: "Approaching Japan: Pacific Point 3 achieved.", type: "Road" },
     { name: "Japan", longitude: 139.6503, latitude: 35.6762, description: "Land of the Rising Sun: Welcome to Japan.", type: "Interest" },
     
-    // Waypoints from Japan to Malaysia
-    { name: "To Malaysia 1", longitude: 135, latitude: 25, description: "Leaving the Japanese archipelago, heading towards Southeast Asia.", type: "Road" },
-    { name: "To Malaysia 2", longitude: 125, latitude: 15, description: "You are now over the warm waters of the Philippine Sea.", type: "Road" },
-    { name: "To Malaysia 3", longitude: 115, latitude: 10, description: "Approaching the equatorial line, the climate becomes warmer.", type: "Road" },
-    { name: "Malaysia", longitude: 101.9758, latitude: 4.2105, description: "Selamat Datang ke Malaysia - Welcome to Malaysia, a country of natural beauty.", type: "Interest" },
+     { name: "Yokohama, Japan", longitude: 139.6425, latitude: 35.4478, description: "Departure from Yokohama, one of Japan's major ports.", type: "Interest" },
+    { name: "Offshore Point 1", longitude: 138.0, latitude: 34.5, description: "Leaving Tokyo Bay, entering the Pacific Ocean.", type: "Road" },
+    { name: "Offshore Point 2", longitude: 136.5, latitude: 33.0, description: "Navigating through the Pacific, southwest of Izu Peninsula.", type: "Road" },
+    { name: "Offshore Point 3", longitude: 134.0, latitude: 31.5, description: "Approaching the Kii Peninsula.", type: "Road" },
+    { name: "Offshore Point 4", longitude: 132.0, latitude: 30.0, description: "Skirting the southern coast of Wakayama Prefecture.", type: "Road" },
+    { name: "Offshore Point 5", longitude: 129.0, latitude: 29.0, description: "Passing south of Kyushu Island.", type: "Road" },
+    { name: "Offshore Point 6", longitude: 126.0, latitude: 28.0, description: "Crossing the East China Sea.", type: "Road" },
+    { name: "Offshore Point 7", longitude: 124.0, latitude: 30.0, description: "Navigating through international waters.", type: "Road" },
+    { name: "Offshore Point 8", longitude: 122.5, latitude: 31.0, description: "Approaching the Yangtze River delta.", type: "Road" },
+    { name: "Shanghai, China", longitude: 121.4737, latitude: 31.2304, description: "Arrival at Shanghai, one of the world's busiest ports.", type: "Interest" },
+  
+      { name: "Offshore Point 9", longitude: 122.0, latitude: 28.0, description: "Exiting the Yangtze River delta into the East China Sea.", type: "Road" },
+    { name: "Offshore Point 10", longitude: 119.0, latitude: 25.0, description: "Bypassing the Taiwanese coast, moving into the northern part of the South China Sea.", type: "Road" },
+    { name: "Offshore Point 11", longitude: 116.0, latitude: 20.0, description: "Navigating through the open waters of the South China Sea, east of Hainan.", type: "Road" },
+    { name: "Offshore Point 12", longitude: 113.0, latitude: 15.0, description: "Passing by the Paracel Islands, maintaining a course in international waters.", type: "Road" },
+    { name: "Offshore Point 13", longitude: 110.0, latitude: 11.0, description: "Skirting the northeastern coasts of Vietnam.", type: "Road" },
+    { name: "Offshore Point 14", longitude: 107.0, latitude: 9.0, description: "Crossing south of Vietnam, approaching the Gulf of Thailand.", type: "Road" },
+    { name: "Offshore Point 15", longitude: 104.0, latitude: 8.0, description: "Entering the Gulf of Thailand, steering clear of the Cambodian coast.", type: "Road" },
+    { name: "Offshore Point 16", longitude: 101.0, latitude: 9.0, description: "Navigating the northern part of the Gulf of Thailand, approaching Thai waters.", type: "Road" },
+    { name: "Laem Chabang Port, Thailand", longitude: 100.8805, latitude: 13.0989, description: "Departure from Laem Chabang, Thailand's busiest port, near Bangkok.", type: "Interest" },
+  
+    // Corrected waypoints from Thailand to Malaysia
+  { name: "Offshore Point 17", longitude: 100.2, latitude: 12.5, description: "Heading southwest, moving away from the Gulf of Thailand into open sea.", type: "Road" },
+    { name: "Offshore Point 18", longitude: 99.5, latitude: 10.0, description: "Clear of Thailand's southern coast, in the Andaman Sea.", type: "Road" },
+    { name: "Offshore Point 19", longitude: 99.0, latitude: 8.0, description: "Further into the Andaman Sea, avoiding landmasses.", type: "Road" },
+    { name: "Offshore Point 20", longitude: 98.5, latitude: 7.0, description: "Navigating deeper into the Andaman Sea, steering clear of coastal areas.", type: "Road" },
+    { name: "Offshore Point 21", longitude: 98.0, latitude: 6.0, description: "Approaching the northern tip of Sumatra, continuing on a clear maritime path.", type: "Road" },
+    { name: "Offshore Point 22", longitude: 98.0, latitude: 5.0, description: "Skirting around the northern coast of Sumatra, entering the Strait of Malacca.", type: "Road" },
+    { name: "Offshore Point 23", longitude: 99.0, latitude: 4.0, description: "Midway through the Strait of Malacca, maintaining a safe distance from land.", type: "Road" },
+    { name: "Port Klang, Malaysia", longitude: 101.3929, latitude: 3.0317, description: "Arrival at Port Klang, the main maritime gateway to Malaysia.", type: "Interest" },
     
-    // Waypoints from Malaysia to Thailand
-    { name: "To Thailand 1", longitude: 103, latitude: 6, description: "Sailing past the Malaysian coast, entering the Gulf of Thailand.", type: "Road" },
-    { name: "Thailand", longitude: 100.9925, latitude: 15.8700, description: "Welcome to Thailand, the land of smiles, culture, and bustling markets.", type: "Interest" },
-    
-    // Waypoints from Thailand to China
-    { name: "To China 1", longitude: 105, latitude: 20, description: "Moving towards the vast and historic lands of China.", type: "Road" },
-    { name: "China", longitude: 116.4074, latitude: 39.9042, description: "Welcome to China, a nation with a profound history and bustling modern cities.", type: "Interest" },
-    
-    // Waypoints from China to India
-    { name: "To India 1", longitude: 100, latitude: 30, description: "Crossing over the rugged terrains leading to South Asia.", type: "Road" },
-    { name: "To India 2", longitude: 90, latitude: 25, description: "Approaching the subcontinental lands, marked by rivers and mountains.", type: "Road" },
-    { name: "India", longitude: 78.9629, latitude: 20.5937, description: "Welcome to India, a vibrant country with a rich tapestry of culture, history, and landscapes.", type: "Interest" },
-    
-    // Waypoints from India to Middle East
-    { name: "To Middle East 1", longitude: 70, latitude: 25, description: "Heading towards the Middle East, a region of ancient civilizations and rich history.", type: "Road" },
-    { name: "Middle East", longitude: 54.5260, latitude: 23.4241, description: "Welcome to the Middle East, a crossroads of the world's cultures and religions.", type: "Interest" },
-    
+  // Waypoints from China to India
+    { name: "Offshore Point 24", longitude: 98.0, latitude: 6.0, description: "Approaching the northern tip of Sumatra, continuing on a clear maritime path.", type: "Road" },
+    { name: "Offshore Point 25", longitude: 98.0, latitude: 5.0, description: "Skirting around the northern coast of Sumatra, entering the Strait of Malacca.", type: "Road" },
+    { name: "Offshore Point 26", longitude: 99.0, latitude: 4.0, description: "Passing west of the Andaman and Nicobar Islands.", type: "Road" },
+    { name: "Offshore Point 27", longitude: 92.0, latitude: 9.0, description: "Sailing across the northern part of the Andaman Sea into the Bay of Bengal.", type: "Road" },
+    { name: "Offshore Point 28", longitude: 90.0, latitude: 13.0, description: "Continuing journey through the Bay of Bengal, approaching the Indian coast.", type: "Road" },
+    { name: "Offshore Point 29", longitude: 88.0, latitude: 15.0, description: "Navigating the central Bay of Bengal, maintaining a course towards Chennai.", type: "Road" },
+    { name: "Offshore Point 30", longitude: 86.0, latitude: 17.0, description: "Approaching the eastern coast of India, preparing for arrival at Chennai.", type: "Road" },
+    { name: "Chennai, India", longitude: 80.2871, latitude: 13.0827, description: "Arrival at Chennai, a major port city on the southeastern coast of India.", type: "Interest" },
+  
+  
+     { name: "Offshore Point 31", longitude: 79.0, latitude: 9.0, description: "Leaving the Bay of Bengal, rounding the Indian Peninsula.", type: "Road" },
+    { name: "Offshore Point 32", longitude: 76.0, latitude: 7.0, description: "Passing by the southern tip of India, navigating near Kanyakumari.", type: "Road" },
+    { name: "Offshore Point 33", longitude: 72.0, latitude: 8.0, description: "Entering the Arabian Sea, west of the Maldives.", type: "Road" },
+    { name: "Offshore Point 34", longitude: 70.0, latitude: 12.0, description: "Sailing northwest, approaching the Indian west coast.", type: "Road" },
+    { name: "Offshore Point 35", longitude: 68.0, latitude: 15.0, description: "Moving along the western coast of India, passing Mumbai.", type: "Road" },
+    { name: "Offshore Point 36", longitude: 65.0, latitude: 20.0, description: "Continuing through the Arabian Sea, clear of the Indian coast.", type: "Road" },
+    { name: "Offshore Point 37", longitude: 60.0, latitude: 23.0, description: "Approaching the Arabian Peninsula, navigating towards the Strait of Hormuz.", type: "Road" },
+    { name: "Offshore Point 38", longitude: 57.0, latitude: 25.0, description: "Navigating the Strait of Hormuz, between Oman and Iran.", type: "Road" },
+    { name: "Dubai, UAE", longitude: 55.8708, latitude: 25.2048, description: "Arrival at Dubai, a major global city and business hub in the United Arab Emirates.", type: "Interest" },
     // Waypoints from Middle East to Italy
-    { name: "To Italy 1", longitude: 45, latitude: 30, description: "Traversing the Mediterranean towards the European continent.", type: "Road" },
-    { name: "To Italy 2", longitude: 35, latitude: 35, description: "Closing in on the Italian peninsula, with its rich history and culinary delights.", type: "Road" },
-    { name: "Italy", longitude: 12.5674, latitude: 41.8719, description: "Benvenuti in Italia - Welcome to Italy, a country of art, architecture, and fashion.", type: "Interest]"}
+      { name: "Offshore Point 31", longitude: 57.0, latitude: 25.0, description: "Exiting the Arabian Gulf, entering the Gulf of Oman.", type: "Road" },
+    { name: "Offshore Point 39", longitude: 56.0, latitude: 24.0, description: "Leaving the Persian Gulf, entering the Gulf of Oman.", type: "Road" },
+    { name: "Offshore Point 40", longitude: 58.0, latitude: 23.0, description: "Navigating along the coast of Oman, heading towards the Arabian Sea.", type: "Road" },
+    { name: "Offshore Point 41", longitude: 60.0, latitude: 22.0, description: "Out into the Arabian Sea, making a course for the Indian Ocean.", type: "Road" },
+    { name: "Offshore Point 42", longitude: 62.0, latitude: 21.0, description: "Passing by the southern coast of Iran.", type: "Road" },
+    { name: "Offshore Point 43", longitude: 64.0, latitude: 20.0, description: "Approaching the entrance to the Gulf of Aden.", type: "Road" },
+    { name: "Offshore Point 44", longitude: 48.0, latitude: 15.0, description: "Entering the Gulf of Aden, between Yemen and Djibouti.", type: "Road" },
+    { name: "Offshore Point 45", longitude: 43.0, latitude: 14.0, description: "Sailing westward through the Bab-el-Mandeb Strait into the Red Sea.", type: "Road" },
+    { name: "Offshore Point 46", longitude: 40.0, latitude: 20.0, description: "Navigating the Red Sea, heading towards the Suez Canal.", type: "Road" },
+    { name: "Suez Canal Entrance", longitude: 32.532, latitude: 29.947, description: "Approaching the Suez Canal from the Red Sea.", type: "Road" },
+    { name: "Suez Canal Exit", longitude: 32.349, latitude: 31.265, description: "Exiting the Suez Canal, entering the Mediterranean Sea.", type: "Road" },
 
+    // Waypoints from Suez Canal to Italy
+    { name: "Offshore Point 47", longitude: 30.0, latitude: 33.0, description: "Passing by the northern coast of Egypt.", type: "Road" },
+    { name: "Offshore Point 48", longitude: 25.0, latitude: 35.0, description: "Crossing the Mediterranean, north of Libya.", type: "Road" },
+    { name: "Offshore Point 49", longitude: 20.0, latitude: 37.0, description: "Navigating past the southern region of Greece.", type: "Road" },
+    { name: "Offshore Point 50", longitude: 18.0, latitude: 39.0, description: "Approaching the heel of Italy's boot.", type: "Road" },
+    { name: "Offshore Point 51", longitude: 15.0, latitude: 41.0, description: "Skirting the eastern coast of Italy.", type: "Road" },
+    { name: "Genoa, Italy", longitude: 8.9463, latitude: 44.4056, description: "Arrival at Genoa, a major port city and the maritime gateway to Italy.", type: "Interest" },
+    { name: "Offshore Point 401", longitude: 14.0, latitude: 38.0, description: "Approaching the southern tip of Italy, preparing for the final leg to Genoa.", type: "Road" },
+    { name: "Genoa, Italy", longitude: 8.9463, latitude: 44.4056, description: "Arrival at Genoa, a major port city in Italy with a rich history and culture.", type: "Interest" },
+    { name: "Offshore Point 411", longitude: 8.0, latitude: 42.0, description: "Navigating past the northwestern coast of Italy.", type: "Road" },
+    { name: "Offshore Point 421", longitude: 5.0, latitude: 40.0, description: "Approaching the French Riviera, near Nice and Monaco.", type: "Road" },
+    { name: "Offshore Point 431", longitude: 3.0, latitude: 39.0, description: "Passing by the Balearic Islands in the western Mediterranean.", type: "Road" },
+    { name: "Offshore Point 441", longitude: 0.5, latitude: 38.0, description: "Crossing the sea near Valencia, Spain, heading towards the Strait of Gibraltar.", type: "Road" },
+    { name: "Offshore Point 451", longitude: -5.0, latitude: 36.0, description: "Entering the Strait of Gibraltar, the gateway between the Mediterranean Sea and the Atlantic Ocean.", type: "Road" },
+    { name: "Offshore Point 461", longitude: -7.0, latitude: 37.0, description: "Navigating off the southern coast of Portugal, near the Algarve region.", type: "Road" },
+    { name: "Offshore Point 471", longitude: -9.0, latitude: 38.5, description: "Approaching Lisbon, preparing for arrival at the port.", type: "Road" },
+    { name: "Lisbon, Portugal", longitude: -9.1372, latitude: 38.7080, description: "Arrival at Lisbon, the capital and largest city of Portugal, known for its historical sites and cultural significance.", type: "Interest" },
+    { name: "Offshore Point 481", longitude: -9.5, latitude: 39.5, description: "Sailing north along the western coast of Portugal.", type: "Road" },
+    { name: "Offshore Point 491", longitude: -8.5, latitude: 41.0, description: "Approaching the northern Portuguese coast, near Porto.", type: "Road" },
+    { name: "Offshore Point 501", longitude: -8.9, latitude: 42.0, description: "Entering Spanish waters, navigating towards Galicia.", type: "Road" },
+    { name: "Vigo, Spain", longitude: -8.7226, latitude: 42.2406, description: "Arrival at Vigo, one of Spain's busiest fishing ports and the gateway to the Atlantic.", type: "Interest" },
+ { name: "Offshore Point 591", longitude: -8.0, latitude: 44.0, description: "Navigating north along the western coast of France, towards the Bay of Biscay.", type: "Road" },
+    { name: "Offshore Point 60", longitude: -6.0, latitude: 46.0, description: "Crossing the Bay of Biscay towards the Brittany coast of France.", type: "Road" },
+    { name: "Offshore Point 61", longitude: -4.0, latitude: 48.0, description: "Approaching the entrance to the English Channel, near Brest, France.", type: "Road" },
+    { name: "Offshore Point 62", longitude: -2.0, latitude: 50.0, description: "Passing through the English Channel, navigating between England and France.", type: "Road" },
+    { name: "Offshore Point 63", longitude: 0.0, latitude: 52.0, description: "Continuing through the English Channel, heading towards the North Sea.", type: "Road" },
+    { name: "Offshore Point 64", longitude: 2.0, latitude: 54.0, description: "Entering the North Sea, passing by the southeastern coast of England.", type: "Road" },
+    { name: "Offshore Point 65", longitude: 4.0, latitude: 56.0, description: "Navigating the North Sea, parallel to the Netherlands and Denmark.", type: "Road" },
+    { name: "Hamburg, Germany", longitude: 9.9937, latitude: 53.5511, description: "Arrival at Hamburg, a major port city in northern Germany connected to the North Sea.", type: "Interest" },
+    { name: "Offshore Point 66", longitude: 7.0, latitude: 55.0, description: "Leaving the North Sea, entering the Norwegian Sea.", type: "Road" },
+    { name: "Offshore Point 67", longitude: -5.0, latitude: 57.0, description: "Navigating past the northern tip of the British Isles into the open Atlantic.", type: "Road" },
+    { name: "Offshore Point 68", longitude: -20.0, latitude: 60.0, description: "Crossing the northern Atlantic, moving between Iceland and the Faroe Islands.", type: "Road" },
+    { name: "Offshore Point 69", longitude: -40.0, latitude: 55.0, description: "Mid-Atlantic route, halfway between Europe and North America.", type: "Road" },
+    { name: "Offshore Point 70", longitude: -50.0, latitude: 50.0, description: "Approaching Canadian waters, navigating through cooler northern currents.", type: "Road" },
+    { name: "Offshore Point 71", longitude: -55.0, latitude: 45.0, description: "Entering the approaches to the Gulf of Saint Lawrence.", type: "Road" },
+    { name: "Offshore Point 72", longitude: -60.0, latitude: 44.0, description: "Passing by Sable Island, preparing for the final approach to Halifax.", type: "Road" },
+    { name: "Halifax, Nova Scotia, Canada", longitude: -63.5752, latitude: 44.6488, description: "Arrival at Halifax, a key port city on the eastern seaboard of Canada.", type: "Interest" },
+    { name: "Offshore Point 73", longitude: -66.0, latitude: 43.0, description: "Leaving the Canadian coastline, heading towards the eastern seaboard of the USA.", type: "Road" },
+    { name: "Offshore Point 74", longitude: -69.0, latitude: 40.0, description: "Passing by the New England coast, avoiding major shipping lanes and obstacles.", type: "Road" },
+    { name: "Offshore Point 75", longitude: -72.0, latitude: 37.0, description: "Navigating around the outer banks of North Carolina.", type: "Road" },
+    { name: "Offshore Point 76", longitude: -75.0, latitude: 34.0, description: "Skirting past Cape Hatteras, continuing southward along the US East Coast.", type: "Road" },
+    { name: "Offshore Point 77", longitude: -77.0, latitude: 31.0, description: "Approaching the Georgia-Florida border, preparing for entry into Florida waters.", type: "Road" },
+    { name: "Miami, USA", longitude: -80.1918, latitude: 25.7617, description: "Arrival at Miami, a major center for international trade and tourism.", type: "Interest" },
+    { name: "Offshore Point 78", longitude: -81.0, latitude: 25.0, description: "Leaving the Florida Straits, heading into the Gulf of Mexico.", type: "Road" },
+    { name: "Offshore Point 79", longitude: -85.0, latitude: 24.0, description: "Navigating the southeastern waters of the Gulf of Mexico.", type: "Road" },
+    { name: "Offshore Point 80", longitude: -87.0, latitude: 22.0, description: "Passing west of Cuba, maintaining course through the Gulf.", type: "Road" },
+    { name: "Offshore Point 81", longitude: -90.0, latitude: 21.0, description: "Approaching the Yucatan Channel, between Cuba and Mexico.", type: "Road" },
+    { name: "Offshore Point 82", longitude: -93.0, latitude: 20.0, description: "Sailing along the southern Gulf of Mexico, near the Yucatan Peninsula.", type: "Road" },
+    { name: "Veracruz, Mexico", longitude: -96.1342, latitude: 19.1738, description: "Arrival at Veracruz, an important maritime gateway and historical port city in Mexico.", type: "Interest" },
+    { name: "Offshore Point 83", longitude: -94.0, latitude: 18.0, description: "Heading south from the Mexican coast into the Gulf of Mexico.", type: "Road" },
+    { name: "Offshore Point 84", longitude: -91.0, latitude: 17.0, description: "Passing by the Yucatan Peninsula, entering the Caribbean Sea.", type: "Road" },
+    { name: "Offshore Point 85", longitude: -88.0, latitude: 16.0, description: "Navigating along the eastern coast of Belize.", type: "Road" },
+    { name: "Offshore Point 86", longitude: -85.0, latitude: 14.0, description: "Sailing southward near the coastlines of Honduras and Nicaragua.", type: "Road" },
+    { name: "Offshore Point 88", longitude: -83.0, latitude: 12.0, description: "Continuing past the Caribbean coast of Costa Rica and Panama.", type: "Road" },
+    { name: "Offshore Point 89", longitude: -81.0, latitude: 10.0, description: "Approaching the San Blas Islands and navigating through the Colombian Basin.", type: "Road" },
+    { name: "Offshore Point 90", longitude: -79.0, latitude: 9.0, description: "Passing close to the northeastern coast of Panama, near the Caribbean entrance of the Panama Canal.", type: "Road" },
+    { name: "Cartagena, Colombia", longitude: -75.5258, latitude: 10.4028, description: "Arrival at Cartagena, a major port city on Colombia’s Caribbean coast.", type: "Interest" },
+    { name: "Offshore Point 91", longitude: -74.0, latitude: 9.0, description: "Navigating southeast along the Caribbean coast of Colombia.", type: "Road" },
+    { name: "Offshore Point 92", longitude: -70.0, latitude: 8.0, description: "Passing the Guajira Peninsula, moving towards the open Atlantic waters.", type: "Road" },
+    { name: "Offshore Point 93", longitude: -65.0, latitude: 6.0, description: "Approaching the northeastern coast of Venezuela.", type: "Road" },
+    { name: "Offshore Point 94", longitude: -60.0, latitude: 5.0, description: "Sailing past the Orinoco River delta, avoiding shallow waters and river outflows.", type: "Road" },
+    { name: "Offshore Point 95", longitude: -55.0, latitude: 2.0, description: "Navigating clear of the Amazon River delta and the coastal waters of Guyana.", type: "Road" },
+    { name: "Offshore Point 96", longitude: -50.0, latitude: 0.0, description: "Entering Brazilian waters, moving along the coast of Amapá and Pará.", type: "Road" },
+    { name: "Offshore Point 97", longitude: -46.0, latitude: -2.0, description: "Continuing down the northern coast of Brazil, past the state of Maranhão.", type: "Road" },
+    { name: "Offshore Point 98", longitude: -42.0, latitude: -5.0, description: "Sailing along the northeastern coast of Brazil, bypassing the states of Piauí and Ceará.", type: "Road" },
+    { name: "Offshore Point 99", longitude: -39.0, latitude: -8.0, description: "Passing the easternmost point of South America, Cape São Roque.", type: "Road" },
+    { name: "Offshore Point 100", longitude: -38.0, latitude: -12.0, description: "Skirting the coast of Bahia, navigating the South Atlantic currents.", type: "Road" },
+    { name: "Offshore Point 101", longitude: -46.0, latitude: -24.0, description: "Approaching the port of Santos, preparing for entry and berthing procedures.", type: "Road" },
+    { name: "Santos, Brazil", longitude: -46.3350, latitude: -23.9608, description: "Arrival at Santos, the largest seaport in Latin America and a critical point for Brazilian trade.", type: "Interest" },
+  
 ];
 
 
@@ -178,6 +284,7 @@ function checkWaypointProximityAndSelect() {
 
     let nearestDistance = Infinity;
     let nearestWaypoint = null;
+    let isInterestPoint = false; // Track whether the nearest waypoint is an interest point
 
     // Iterate through each waypoint to find the nearest one
     waypoints.forEach(waypoint => {
@@ -187,21 +294,28 @@ function checkWaypointProximityAndSelect() {
         if (distance < nearestDistance) {
             nearestDistance = distance;
             nearestWaypoint = waypoint;
+            isInterestPoint = waypoint.type === "Interest"; // Check if it's an interest point
         }
     });
 
-    console.log(`Nearest waypoint: ${nearestWaypoint ? nearestWaypoint.name : "None"}, Distance: ${nearestDistance}`);
-
-    // Only update the infobox if the nearest waypoint has changed
-    if (nearestWaypoint && nearestDistance < 300000 && lastNearestWaypoint !== nearestWaypoint) {  // Ensure this threshold matches your needs
+    // Actions for interest waypoints
+    if (nearestWaypoint && nearestDistance < 300000 && lastNearestWaypoint !== nearestWaypoint && isInterestPoint) {
         var waypointEntity = viewer.entities.getById(`waypoint-${nearestWaypoint.name}`);
         if (waypointEntity) {
             console.log(`Changing selected entity to: ${waypointEntity.name}`);
             viewer.selectedEntity = waypointEntity;
-            lastNearestWaypoint = nearestWaypoint;  // Update lastNearestWaypoint to prevent repetitive updates
-        } else {
-            console.log(`Waypoint entity '${nearestWaypoint.name}' not found.`);
+            viewer.clock.shouldAnimate = false; // Stop the animation
+            lastNearestWaypoint = nearestWaypoint; // Update lastNearestWaypoint to prevent repetitive updates
         }
+    } else if (!isInterestPoint || nearestDistance >= 300000) {
+        // If the nearest waypoint is not an interest point or is beyond the threshold distance
+        if (viewer.selectedEntity) {
+            viewer.selectedEntity = undefined; // Clear the selected entity
+        }
+        if (!viewer.clock.shouldAnimate) {
+            viewer.clock.shouldAnimate = true; // Resume the animation if it was stopped
+        }
+        lastNearestWaypoint = null; // Reset lastNearestWaypoint if moving away from an interest point or if nearest is a road waypoint
     }
 }
 
