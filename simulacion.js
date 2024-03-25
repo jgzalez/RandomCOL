@@ -16,13 +16,29 @@ const viewer = new Cesium.Viewer("cesiumContainer", {
 
 // Define refined waypoints for the ship's journey avoiding land.
 const waypoints = [
-    { name: "Hawaii", longitude: -157.8583, latitude: 21.3069, description: "Aloha! Welcome to the beautiful islands of Hawaii.", type: "Interest" },
+        { name: "Departure", longitude: -150.8583, latitude: 19.3069, description: "Aloha! Welcome to the beautiful islands of Hawaii.", type: "Interest" },
+
+{
+    "name": "Hawaii, USA",
+    "longitude": -157.8583,
+    "latitude": 21.3069,
+    "description": "<div><h1>Hawaii:</h1><p>Un vibrante mosaico de sabores, influenciada por las culturas polinesia, asiática y americana, destacando platos como el<strong><em> poke</em></strong>, el <strong><em>luau pig</em></strong>, y el<strong><em> loco moco</em></strong>, todos enmarcados por el exótico escenario de sus islas.</p><ol><li>Deleite su paladar en nuestro restaurante <strong class='ql-size-large'><em>Pacific Rim</em></strong>. Una exótica cocina mixta que fusiona influencias<em> francesas, asiáticas y polinesias.</em></li><li>Visite el <strong class='ql-size-large'><em>Bar Tiki</em></strong>, donde encontrará una amplia diversidad de refrescantes coctéles tropicales.</li></ol></div>",
+    "type": "Interest"
+},
+
+  
     { name: "Pacific Point 1", longitude: -170, latitude: 25, description: "You've reached Pacific Point 1, navigating through the vast Pacific Ocean.", type: "Road" },
     { name: "Pacific Point 2", longitude: 160, latitude: 30, description: "This is Pacific Point 2, closer to the Asian continent.", type: "Road" },
     { name: "Pacific Point 3", longitude: 150, latitude: 35, description: "Approaching Japan: Pacific Point 3 achieved.", type: "Road" },
-    { name: "Japan", longitude: 139.6503, latitude: 35.6762, description: "Land of the Rising Sun: Welcome to Japan.", type: "Interest" },
+
+  {
+    "name": "Japan",
+    "longitude": 139.6503,
+    "latitude": 35.6762,
+    "description": "<div><h1>Japón:</h1><p>Una elegante expresión de temporada y equilibrio, caracterizada por su <strong><em>sushi</em></strong>, <strong><em>sashimi</em></strong>, <strong><em>ramen</em></strong>, y <strong><em>tempura</em></strong>, con un profundo respeto por la frescura de los ingredientes y la estética en su presentación.</p><ol><li>Conozca la comida tradicional japonesa en nuestro menú <em>YAKUSHIMA:</em> donde encontrará los principales platos del país del sol naciente.</li></ol></div>",
+    "type": "Interest"
+  },
     
-     { name: "Yokohama, Japan", longitude: 139.6425, latitude: 35.4478, description: "Departure from Yokohama, one of Japan's major ports.", type: "Interest" },
     { name: "Offshore Point 1", longitude: 138.0, latitude: 34.5, description: "Leaving Tokyo Bay, entering the Pacific Ocean.", type: "Road" },
     { name: "Offshore Point 2", longitude: 136.5, latitude: 33.0, description: "Navigating through the Pacific, southwest of Izu Peninsula.", type: "Road" },
     { name: "Offshore Point 3", longitude: 134.0, latitude: 31.5, description: "Approaching the Kii Peninsula.", type: "Road" },
@@ -31,7 +47,13 @@ const waypoints = [
     { name: "Offshore Point 6", longitude: 126.0, latitude: 28.0, description: "Crossing the East China Sea.", type: "Road" },
     { name: "Offshore Point 7", longitude: 124.0, latitude: 30.0, description: "Navigating through international waters.", type: "Road" },
     { name: "Offshore Point 8", longitude: 122.5, latitude: 31.0, description: "Approaching the Yangtze River delta.", type: "Road" },
-    { name: "Shanghai, China", longitude: 121.4737, latitude: 31.2304, description: "Arrival at Shanghai, one of the world's busiest ports.", type: "Interest" },
+{
+    "name": "Shanghai, China",
+    "longitude": 121.4737,
+    "latitude": 31.2304,
+    "description": "<div><h1>China:</h1><p>Un vasto panorama de sabores y técnicas regionales, desde el <em>dim sum</em> cantonés hasta el picante <em>sichuan</em>, destacando la importancia del equilibrio entre color, sabor y textura en cada plato.</p><p>Disfrute de platos como:</p><ul><li>Dim Sum</li><li>Carnes Sichuán</li><li>Pollo Kung Pao</li></ul><p>Entre otras delicias de esta potencia culinaria y gastronómica.</p></div>",
+    "type": "Interest"
+},
   
       { name: "Offshore Point 9", longitude: 122.0, latitude: 28.0, description: "Exiting the Yangtze River delta into the East China Sea.", type: "Road" },
     { name: "Offshore Point 10", longitude: 119.0, latitude: 25.0, description: "Bypassing the Taiwanese coast, moving into the northern part of the South China Sea.", type: "Road" },
@@ -41,7 +63,13 @@ const waypoints = [
     { name: "Offshore Point 14", longitude: 107.0, latitude: 9.0, description: "Crossing south of Vietnam, approaching the Gulf of Thailand.", type: "Road" },
     { name: "Offshore Point 15", longitude: 104.0, latitude: 8.0, description: "Entering the Gulf of Thailand, steering clear of the Cambodian coast.", type: "Road" },
     { name: "Offshore Point 16", longitude: 101.0, latitude: 9.0, description: "Navigating the northern part of the Gulf of Thailand, approaching Thai waters.", type: "Road" },
-    { name: "Laem Chabang Port, Thailand", longitude: 100.8805, latitude: 13.0989, description: "Departure from Laem Chabang, Thailand's busiest port, near Bangkok.", type: "Interest" },
+{
+    "name": "Laem Chabang Port, Thailand",
+    "longitude": 100.8805,
+    "latitude": 13.0989,
+    "description": "<div><h1>Tailandia:</h1><p>La gastronomía de Tailandia es una explosión de sabores equilibrados entre lo <em>dulce</em>, <em>ácido</em>, <em>salado</em> y <em>picante</em>, destacando platos como el <em>pad thai</em>, <em>curry verde</em> y <em>tom yum goong</em>, en una cocina que celebra la frescura y la armonía de ingredientes.</p></div>",
+    "type": "Interest"
+},
   
     // Corrected waypoints from Thailand to Malaysia
   { name: "Offshore Point 17", longitude: 100.2, latitude: 12.5, description: "Heading southwest, moving away from the Gulf of Thailand into open sea.", type: "Road" },
@@ -51,7 +79,13 @@ const waypoints = [
     { name: "Offshore Point 21", longitude: 98.0, latitude: 6.0, description: "Approaching the northern tip of Sumatra, continuing on a clear maritime path.", type: "Road" },
     { name: "Offshore Point 22", longitude: 98.0, latitude: 5.0, description: "Skirting around the northern coast of Sumatra, entering the Strait of Malacca.", type: "Road" },
     { name: "Offshore Point 23", longitude: 99.0, latitude: 4.0, description: "Midway through the Strait of Malacca, maintaining a safe distance from land.", type: "Road" },
-    { name: "Port Klang, Malaysia", longitude: 101.3929, latitude: 3.0317, description: "Arrival at Port Klang, the main maritime gateway to Malaysia.", type: "Interest" },
+{
+    "name": "Port Klang, Malaysia",
+    "longitude": 101.3929,
+    "latitude": 3.0317,
+    "description": "<div><h1>Malasia:</h1><p>Un rico tapiz de sabores intensos y variados, con platos como el <em>rendang</em>, <em>nasi goreng</em>, y <em>satay</em>, reflejando una diversidad cultural a través de especias exóticas y técnicas culinarias tradicionales.</p></div>",
+    "type": "Interest"
+},
     
   // Waypoints from China to India
     { name: "Offshore Point 24", longitude: 98.0, latitude: 6.0, description: "Approaching the northern tip of Sumatra, continuing on a clear maritime path.", type: "Road" },
@@ -61,7 +95,13 @@ const waypoints = [
     { name: "Offshore Point 28", longitude: 90.0, latitude: 13.0, description: "Continuing journey through the Bay of Bengal, approaching the Indian coast.", type: "Road" },
     { name: "Offshore Point 29", longitude: 88.0, latitude: 15.0, description: "Navigating the central Bay of Bengal, maintaining a course towards Chennai.", type: "Road" },
     { name: "Offshore Point 30", longitude: 86.0, latitude: 17.0, description: "Approaching the eastern coast of India, preparing for arrival at Chennai.", type: "Road" },
-    { name: "Chennai, India", longitude: 80.2871, latitude: 13.0827, description: "Arrival at Chennai, a major port city on the southeastern coast of India.", type: "Interest" },
+{
+    "name": "Chennai, India",
+    "longitude": 80.2871,
+    "latitude": 13.0827,
+    "description": "<div><h1>India:</h1><p>Un mosaico vibrante de <em>especias y aromas</em>, con platos como <strong><em>curry</em></strong>, <strong><em>biryani</em></strong>, y <strong><em>masala dosa</em></strong>, reflejando una diversidad regional y el arte de combinar especias en recetas que alimentan tanto el cuerpo como el alma.</p></div>",
+    "type": "Interest"
+},
   
   
      { name: "Offshore Point 31", longitude: 79.0, latitude: 9.0, description: "Leaving the Bay of Bengal, rounding the Indian Peninsula.", type: "Road" },
@@ -72,17 +112,24 @@ const waypoints = [
     { name: "Offshore Point 36", longitude: 65.0, latitude: 20.0, description: "Continuing through the Arabian Sea, clear of the Indian coast.", type: "Road" },
     { name: "Offshore Point 37", longitude: 60.0, latitude: 23.0, description: "Approaching the Arabian Peninsula, navigating towards the Strait of Hormuz.", type: "Road" },
     { name: "Offshore Point 38", longitude: 57.0, latitude: 25.0, description: "Navigating the Strait of Hormuz, between Oman and Iran.", type: "Road" },
-    { name: "Dubai, UAE", longitude: 55.8708, latitude: 25.2048, description: "Arrival at Dubai, a major global city and business hub in the United Arab Emirates.", type: "Interest" },
+{
+    "name": "Middle East",
+    "longitude": 55.8708,
+    "latitude": 25.2048,
+    "description": "<div><h1>Medio Oriente:</h1><p>La gastronomía del Medio Oriente es un festín de sabores ricos y texturas variadas, destacando platos como:</p><ol><li>El Hummus</li><li>Los Kebabs</li><li>El Falafel</li></ol><p>En una tradición culinaria que celebra el uso generoso de especias y hierbas, y la importancia de compartir la comida.</p></div>",
+    "type": "Interest"
+},
     // Waypoints from Middle East to Italy
       { name: "Offshore Point 31", longitude: 57.0, latitude: 25.0, description: "Exiting the Arabian Gulf, entering the Gulf of Oman.", type: "Road" },
-    { name: "Offshore Point 39", longitude: 56.0, latitude: 24.0, description: "Leaving the Persian Gulf, entering the Gulf of Oman.", type: "Road" },
-    { name: "Offshore Point 40", longitude: 58.0, latitude: 23.0, description: "Navigating along the coast of Oman, heading towards the Arabian Sea.", type: "Road" },
+    { name: "Offshore Point 39", longitude: 60.0, latitude: 23.0, description: "Leaving the Persian Gulf, entering the Gulf of Oman.", type: "Road" },
     { name: "Offshore Point 41", longitude: 60.0, latitude: 22.0, description: "Out into the Arabian Sea, making a course for the Indian Ocean.", type: "Road" },
-    { name: "Offshore Point 42", longitude: 62.0, latitude: 21.0, description: "Passing by the southern coast of Iran.", type: "Road" },
-    { name: "Offshore Point 43", longitude: 64.0, latitude: 20.0, description: "Approaching the entrance to the Gulf of Aden.", type: "Road" },
-    { name: "Offshore Point 44", longitude: 48.0, latitude: 15.0, description: "Entering the Gulf of Aden, between Yemen and Djibouti.", type: "Road" },
-    { name: "Offshore Point 45", longitude: 43.0, latitude: 14.0, description: "Sailing westward through the Bab-el-Mandeb Strait into the Red Sea.", type: "Road" },
-    { name: "Offshore Point 46", longitude: 40.0, latitude: 20.0, description: "Navigating the Red Sea, heading towards the Suez Canal.", type: "Road" },
+    
+  { name: "Offshore Point 42", longitude: 62.0, latitude: 21.0, description: "Passing by the southern coast of Iran.", type: "Road" },
+      { name: "Offshore Point 40", longitude: 55.0, latitude: 15.0, description: "Navigating along the coast of Oman, heading towards the Arabian Sea.", type: "Road" },
+  
+    { name: "Offshore Point 44", longitude: 44.0, latitude: 12.0, description: "Entering the Gulf of Aden, between Yemen and Djibouti.", type: "Road" },
+    { name: "Offshore Point 45", longitude: 41.0, latitude: 14.7, description: "Sailing westward through the Bab-el-Mandeb Strait into the Red Sea.", type: "Road" },
+    { name: "Offshore Point 46", longitude: 39.0, latitude: 21.0, description: "Navigating the Red Sea, heading towards the Suez Canal.", type: "Road" },
     { name: "Suez Canal Entrance", longitude: 32.532, latitude: 29.947, description: "Approaching the Suez Canal from the Red Sea.", type: "Road" },
     { name: "Suez Canal Exit", longitude: 32.349, latitude: 31.265, description: "Exiting the Suez Canal, entering the Mediterranean Sea.", type: "Road" },
 
@@ -91,71 +138,136 @@ const waypoints = [
     { name: "Offshore Point 48", longitude: 25.0, latitude: 35.0, description: "Crossing the Mediterranean, north of Libya.", type: "Road" },
     { name: "Offshore Point 49", longitude: 20.0, latitude: 37.0, description: "Navigating past the southern region of Greece.", type: "Road" },
     { name: "Offshore Point 50", longitude: 18.0, latitude: 39.0, description: "Approaching the heel of Italy's boot.", type: "Road" },
-    { name: "Offshore Point 51", longitude: 15.0, latitude: 41.0, description: "Skirting the eastern coast of Italy.", type: "Road" },
-    { name: "Genoa, Italy", longitude: 8.9463, latitude: 44.4056, description: "Arrival at Genoa, a major port city and the maritime gateway to Italy.", type: "Interest" },
-    { name: "Offshore Point 401", longitude: 14.0, latitude: 38.0, description: "Approaching the southern tip of Italy, preparing for the final leg to Genoa.", type: "Road" },
-    { name: "Genoa, Italy", longitude: 8.9463, latitude: 44.4056, description: "Arrival at Genoa, a major port city in Italy with a rich history and culture.", type: "Interest" },
+    { name: "Offshore Point 51", longitude: 17.0, latitude: 33.0, description: "Skirting the eastern coast of Italy.", type: "Road" },
+    { name: "Offshore Point 401", longitude: 14.0, latitude: 35.0, description: "Approaching the southern tip of Italy, preparing for the final leg to Genoa.", type: "Road" },
+{
+    "name": "Genoa, Italy",
+    "longitude": 8.9463,
+    "latitude": 44.4056,
+    "description": "<div><h1>Italia:</h1><p>La gastronomía de Italia es una celebración del amor por la comida, con platos icónicos como la <strong><em>pasta, pizza, y risotto</em></strong>, destacando la importancia de ingredientes frescos y locales, en una cocina que equilibra la simplicidad con el arte culinario.</p></div>",
+    "type": "Interest"
+},
     { name: "Offshore Point 411", longitude: 8.0, latitude: 42.0, description: "Navigating past the northwestern coast of Italy.", type: "Road" },
     { name: "Offshore Point 421", longitude: 5.0, latitude: 40.0, description: "Approaching the French Riviera, near Nice and Monaco.", type: "Road" },
     { name: "Offshore Point 431", longitude: 3.0, latitude: 39.0, description: "Passing by the Balearic Islands in the western Mediterranean.", type: "Road" },
     { name: "Offshore Point 441", longitude: 0.5, latitude: 38.0, description: "Crossing the sea near Valencia, Spain, heading towards the Strait of Gibraltar.", type: "Road" },
     { name: "Offshore Point 451", longitude: -5.0, latitude: 36.0, description: "Entering the Strait of Gibraltar, the gateway between the Mediterranean Sea and the Atlantic Ocean.", type: "Road" },
-    { name: "Offshore Point 461", longitude: -7.0, latitude: 37.0, description: "Navigating off the southern coast of Portugal, near the Algarve region.", type: "Road" },
-    { name: "Offshore Point 471", longitude: -9.0, latitude: 38.5, description: "Approaching Lisbon, preparing for arrival at the port.", type: "Road" },
-    { name: "Lisbon, Portugal", longitude: -9.1372, latitude: 38.7080, description: "Arrival at Lisbon, the capital and largest city of Portugal, known for its historical sites and cultural significance.", type: "Interest" },
-    { name: "Offshore Point 481", longitude: -9.5, latitude: 39.5, description: "Sailing north along the western coast of Portugal.", type: "Road" },
-    { name: "Offshore Point 491", longitude: -8.5, latitude: 41.0, description: "Approaching the northern Portuguese coast, near Porto.", type: "Road" },
-    { name: "Offshore Point 501", longitude: -8.9, latitude: 42.0, description: "Entering Spanish waters, navigating towards Galicia.", type: "Road" },
-    { name: "Vigo, Spain", longitude: -8.7226, latitude: 42.2406, description: "Arrival at Vigo, one of Spain's busiest fishing ports and the gateway to the Atlantic.", type: "Interest" },
- { name: "Offshore Point 591", longitude: -8.0, latitude: 44.0, description: "Navigating north along the western coast of France, towards the Bay of Biscay.", type: "Road" },
+    { name: "Offshore Point 461", longitude: -9.0, latitude: 36.0, description: "Navigating off the southern coast of Portugal, near the Algarve region.", type: "Road" },
+    { name: "Offshore Point 471", longitude: -11.0, latitude: 38.5, description: "Approaching Lisbon, preparing for arrival at the port.", type: "Road" },
+{
+    "name": "Lisbon, Portugal",
+    "longitude": -9.1372,
+    "latitude": 38.7080,
+    "description": "<div><h1>Portugal:</h1><p>La gastronomía de Portugal es una rica expresión de tradición marítima y rural, destacando platos como el <strong><em>bacalhau</em></strong>, <strong><em>caldo verde</em></strong>, y <strong><em>pasteles de nata</em></strong>, en una cocina que celebra la simplicidad de los ingredientes frescos y la profundidad de los sabores heredados.</p><p>O'Las Bar: Bar Trópical que fusionará las bebidas más relevantes de Portugal y Hawáii.</p></div>",
+    "type": "Interest"
+},
+    { name: "Offshore Point 481", longitude: -11.5, latitude: 38.5, description: "Sailing north along the western coast of Portugal.", type: "Road" },
+    { name: "Offshore Point 491", longitude: -9.5, latitude: 41.0, description: "Approaching the northern Portuguese coast, near Porto.", type: "Road" },
+{
+    "name": "Vigo, Spain",
+    "longitude": -8.7226,
+    "latitude": 42.2406,
+    "description": "<div><h1>España:</h1><p>La gastronomía de España es un vibrante tapiz de sabores regionales, destacando platos como la <strong><em>paella, tapas, y gazpacho</em></strong>, en una cultura culinaria que valora la calidad de los ingredientes, la diversidad de sus recetas y la importancia de compartir la comida en comunidad.</p></div>",
+    "type": "Interest"
+},
+    { name: "Offshore Point 501", longitude: -11.9, latitude: 42.0, description: "Entering Spanish waters, navigating towards Galicia.", type: "Road" },
+
+  { name: "Offshore Point 591", longitude: -8.0, latitude: 44.0, description: "Navigating north along the western coast of France, towards the Bay of Biscay.", type: "Road" },
     { name: "Offshore Point 60", longitude: -6.0, latitude: 46.0, description: "Crossing the Bay of Biscay towards the Brittany coast of France.", type: "Road" },
-    { name: "Offshore Point 61", longitude: -4.0, latitude: 48.0, description: "Approaching the entrance to the English Channel, near Brest, France.", type: "Road" },
+    { name: "Offshore Point 61", longitude: -6.0, latitude: 48.0, description: "Approaching the entrance to the English Channel, near Brest, France.", type: "Road" },
     { name: "Offshore Point 62", longitude: -2.0, latitude: 50.0, description: "Passing through the English Channel, navigating between England and France.", type: "Road" },
-    { name: "Offshore Point 63", longitude: 0.0, latitude: 52.0, description: "Continuing through the English Channel, heading towards the North Sea.", type: "Road" },
-    { name: "Offshore Point 64", longitude: 2.0, latitude: 54.0, description: "Entering the North Sea, passing by the southeastern coast of England.", type: "Road" },
+    { name: "Offshore Point 63", longitude: 0.0, latitude: 50.0, description: "Continuing through the English Channel, heading towards the North Sea.", type: "Road" },
+    { name: "Offshore Point 64", longitude: 2.0, latitude: 52.0, description: "Entering the North Sea, passing by the southeastern coast of England.", type: "Road" },
     { name: "Offshore Point 65", longitude: 4.0, latitude: 56.0, description: "Navigating the North Sea, parallel to the Netherlands and Denmark.", type: "Road" },
-    { name: "Hamburg, Germany", longitude: 9.9937, latitude: 53.5511, description: "Arrival at Hamburg, a major port city in northern Germany connected to the North Sea.", type: "Interest" },
-    { name: "Offshore Point 66", longitude: 7.0, latitude: 55.0, description: "Leaving the North Sea, entering the Norwegian Sea.", type: "Road" },
-    { name: "Offshore Point 67", longitude: -5.0, latitude: 57.0, description: "Navigating past the northern tip of the British Isles into the open Atlantic.", type: "Road" },
-    { name: "Offshore Point 68", longitude: -20.0, latitude: 60.0, description: "Crossing the northern Atlantic, moving between Iceland and the Faroe Islands.", type: "Road" },
+{
+    "name": "Hamburg, Germany",
+    "longitude": 9.9937,
+    "latitude": 53.5511,
+    "description": "<div><h1>Alemania:</h1><p>La gastronomía alemana es conocida por su variedad, sabor sustancioso y la influencia de las tradiciones regionales. Destaca por sus porciones generosas y sabores reconfortantes. Cada región tiene sus propias especialidades, lo que contribuye a la diversidad culinaria del país.</p><ul><li>Cervecería Marca COL: Se propone una minifábrica de cerveza donde los clientes pueden degustar distintas cervezas propias fabricadas en la casa COL.</li></ul></div>",
+    "type": "Interest"
+},
+  { name: "Offshore Point 66", longitude: 7.0, latitude: 55.0, description: "Leaving the North Sea, entering the Norwegian Sea.", type: "Road" },
+    { name: "Offshore Point 67", longitude: -1.0, latitude: 59.0, description: "Navigating past the northern tip of the British Isles into the open Atlantic.", type: "Road" },
+    { name: "Offshore Point 68", longitude: -3.0, latitude: 60.0, description: "Crossing the northern Atlantic, moving between Iceland and the Faroe Islands.", type: "Road" },
     { name: "Offshore Point 69", longitude: -40.0, latitude: 55.0, description: "Mid-Atlantic route, halfway between Europe and North America.", type: "Road" },
     { name: "Offshore Point 70", longitude: -50.0, latitude: 50.0, description: "Approaching Canadian waters, navigating through cooler northern currents.", type: "Road" },
     { name: "Offshore Point 71", longitude: -55.0, latitude: 45.0, description: "Entering the approaches to the Gulf of Saint Lawrence.", type: "Road" },
     { name: "Offshore Point 72", longitude: -60.0, latitude: 44.0, description: "Passing by Sable Island, preparing for the final approach to Halifax.", type: "Road" },
-    { name: "Halifax, Nova Scotia, Canada", longitude: -63.5752, latitude: 44.6488, description: "Arrival at Halifax, a key port city on the eastern seaboard of Canada.", type: "Interest" },
-    { name: "Offshore Point 73", longitude: -66.0, latitude: 43.0, description: "Leaving the Canadian coastline, heading towards the eastern seaboard of the USA.", type: "Road" },
+{
+    "name": "Halifax, Nova Scotia, Canada",
+    "longitude": -63.5752,
+    "latitude": 44.6488,
+    "description": "<div><h1>Canada:</h1><p>La gastronomía de Canadá es una diversa mezcla de influencias indígenas, francesas, británicas y globales, destacando platos como el <em>poutine, el jarabe de arce,</em> y <em>el salmón ahumado</em>, reflejando la vasta geografía y el mosaico cultural del país.</p></div>",
+    "type": "Interest"
+},    { name: "Offshore Point 73", longitude: -66.0, latitude: 43.0, description: "Leaving the Canadian coastline, heading towards the eastern seaboard of the USA.", type: "Road" },
     { name: "Offshore Point 74", longitude: -69.0, latitude: 40.0, description: "Passing by the New England coast, avoiding major shipping lanes and obstacles.", type: "Road" },
     { name: "Offshore Point 75", longitude: -72.0, latitude: 37.0, description: "Navigating around the outer banks of North Carolina.", type: "Road" },
     { name: "Offshore Point 76", longitude: -75.0, latitude: 34.0, description: "Skirting past Cape Hatteras, continuing southward along the US East Coast.", type: "Road" },
     { name: "Offshore Point 77", longitude: -77.0, latitude: 31.0, description: "Approaching the Georgia-Florida border, preparing for entry into Florida waters.", type: "Road" },
-    { name: "Miami, USA", longitude: -80.1918, latitude: 25.7617, description: "Arrival at Miami, a major center for international trade and tourism.", type: "Interest" },
+{
+    "name": "Miami, USA",
+    "longitude": -80.1918,
+    "latitude": 25.7617,
+    "description": "<div><h1>Estados Unidos:</h1><p>La gastronomía de Estados Unidos es sumamente diversa y refleja la mezcla de culturas y tradiciones presentes en el país. Destacando platos como <em>la hamburguesa, el barbecue,</em> y <em>la tarta de manzana</em>, en una cultura culinaria que celebra la innovación, la diversidad y el espíritu de fusión.</p></div>",
+    "type": "Interest"
+},
     { name: "Offshore Point 78", longitude: -81.0, latitude: 25.0, description: "Leaving the Florida Straits, heading into the Gulf of Mexico.", type: "Road" },
     { name: "Offshore Point 79", longitude: -85.0, latitude: 24.0, description: "Navigating the southeastern waters of the Gulf of Mexico.", type: "Road" },
     { name: "Offshore Point 80", longitude: -87.0, latitude: 22.0, description: "Passing west of Cuba, maintaining course through the Gulf.", type: "Road" },
-    { name: "Offshore Point 81", longitude: -90.0, latitude: 21.0, description: "Approaching the Yucatan Channel, between Cuba and Mexico.", type: "Road" },
+    { name: "Offshore Point 81", longitude: -90.0, latitude: 22.0, description: "Approaching the Yucatan Channel, between Cuba and Mexico.", type: "Road" },
     { name: "Offshore Point 82", longitude: -93.0, latitude: 20.0, description: "Sailing along the southern Gulf of Mexico, near the Yucatan Peninsula.", type: "Road" },
-    { name: "Veracruz, Mexico", longitude: -96.1342, latitude: 19.1738, description: "Arrival at Veracruz, an important maritime gateway and historical port city in Mexico.", type: "Interest" },
-    { name: "Offshore Point 83", longitude: -94.0, latitude: 18.0, description: "Heading south from the Mexican coast into the Gulf of Mexico.", type: "Road" },
-    { name: "Offshore Point 84", longitude: -91.0, latitude: 17.0, description: "Passing by the Yucatan Peninsula, entering the Caribbean Sea.", type: "Road" },
-    { name: "Offshore Point 85", longitude: -88.0, latitude: 16.0, description: "Navigating along the eastern coast of Belize.", type: "Road" },
-    { name: "Offshore Point 86", longitude: -85.0, latitude: 14.0, description: "Sailing southward near the coastlines of Honduras and Nicaragua.", type: "Road" },
-    { name: "Offshore Point 88", longitude: -83.0, latitude: 12.0, description: "Continuing past the Caribbean coast of Costa Rica and Panama.", type: "Road" },
-    { name: "Offshore Point 89", longitude: -81.0, latitude: 10.0, description: "Approaching the San Blas Islands and navigating through the Colombian Basin.", type: "Road" },
-    { name: "Offshore Point 90", longitude: -79.0, latitude: 9.0, description: "Passing close to the northeastern coast of Panama, near the Caribbean entrance of the Panama Canal.", type: "Road" },
-    { name: "Cartagena, Colombia", longitude: -75.5258, latitude: 10.4028, description: "Arrival at Cartagena, a major port city on Colombia’s Caribbean coast.", type: "Interest" },
-    { name: "Offshore Point 91", longitude: -74.0, latitude: 9.0, description: "Navigating southeast along the Caribbean coast of Colombia.", type: "Road" },
-    { name: "Offshore Point 92", longitude: -70.0, latitude: 8.0, description: "Passing the Guajira Peninsula, moving towards the open Atlantic waters.", type: "Road" },
-    { name: "Offshore Point 93", longitude: -65.0, latitude: 6.0, description: "Approaching the northeastern coast of Venezuela.", type: "Road" },
-    { name: "Offshore Point 94", longitude: -60.0, latitude: 5.0, description: "Sailing past the Orinoco River delta, avoiding shallow waters and river outflows.", type: "Road" },
-    { name: "Offshore Point 95", longitude: -55.0, latitude: 2.0, description: "Navigating clear of the Amazon River delta and the coastal waters of Guyana.", type: "Road" },
-    { name: "Offshore Point 96", longitude: -50.0, latitude: 0.0, description: "Entering Brazilian waters, moving along the coast of Amapá and Pará.", type: "Road" },
-    { name: "Offshore Point 97", longitude: -46.0, latitude: -2.0, description: "Continuing down the northern coast of Brazil, past the state of Maranhão.", type: "Road" },
-    { name: "Offshore Point 98", longitude: -42.0, latitude: -5.0, description: "Sailing along the northeastern coast of Brazil, bypassing the states of Piauí and Ceará.", type: "Road" },
-    { name: "Offshore Point 99", longitude: -39.0, latitude: -8.0, description: "Passing the easternmost point of South America, Cape São Roque.", type: "Road" },
-    { name: "Offshore Point 100", longitude: -38.0, latitude: -12.0, description: "Skirting the coast of Bahia, navigating the South Atlantic currents.", type: "Road" },
-    { name: "Offshore Point 101", longitude: -46.0, latitude: -24.0, description: "Approaching the port of Santos, preparing for entry and berthing procedures.", type: "Road" },
-    { name: "Santos, Brazil", longitude: -46.3350, latitude: -23.9608, description: "Arrival at Santos, the largest seaport in Latin America and a critical point for Brazilian trade.", type: "Interest" },
-  
+{
+    "name": "Veracruz, Mexico",
+    "longitude": -96.1342,
+    "latitude": 19.1738,
+    "description": "<div><h1>Mexico:</h1><p>La gastronomía de México es una rica tapestría de sabores complejos y técnicas ancestrales, destacando platos como el mole, tacos, y el pozole, en una tradición culinaria que honra sus raíces indígenas y españolas, enriquecida por una biodiversidad extraordinaria.</p></div>",
+    "type": "Interest"
+},
+  { name: "Offshore Point 83", longitude: -87.0, latitude: 22.0, description: "Passing west of Cuba, maintaining course through the Gulf.", type: "Road" },
+    { name: "Offshore Point 84", longitude: -90.0, latitude: 22.0, description: "Approaching the Yucatan Channel, between Cuba and Mexico.", type: "Road" },
+    { name: "Offshore Point 85", longitude: -93.0, latitude: 20.0, description: "Sailing along the southern Gulf of Mexico, near the Yucatan Peninsula.", type: "Road" },
+{
+    "name": "Cartagena, Colombia",
+    "longitude": -75.5258,
+    "latitude": 10.4028,
+    "description": "<div><h1>Colombia:</h1><p>La gastronomía de Colombia es un vibrante reflejo de su diversidad geográfica y cultural, destacando platos como el ajiaco, bandeja paisa, y arepas, en una cocina que combina sabores indígenas, africanos y españoles, celebrando la riqueza de sus ingredientes locales.</p></div>",
+    "type": "Interest"
+},
+  { name: "Offshore Point 91", longitude: -74.0, latitude: 12.0, description: "Navigating southeast along the Caribbean coast of Colombia.", type: "Road" },
+    { name: "Offshore Point 92", longitude: -70.0, latitude: 12.0, description: "Passing the Guajira Peninsula, moving towards the open Atlantic waters.", type: "Road" },
+    { name: "Offshore Point 93", longitude: -65.0, latitude: 11.0, description: "Approaching the northeastern coast of Venezuela.", type: "Road" },
+    { name: "Offshore Point 94", longitude: -60.0, latitude: 9.0, description: "Sailing past the Orinoco River delta, avoiding shallow waters and river outflows.", type: "Road" },
+    { name: "Offshore Point 95", longitude: -55.0, latitude: 7.0, description: "Navigating clear of the Amazon River delta and the coastal waters of Guyana.", type: "Road" },
+    { name: "Offshore Point 96", longitude: -50.0, latitude: 5, description: "Entering Brazilian waters, moving along the coast of Amapá and Pará.", type: "Road" },
+    { name: "Offshore Point 97", longitude: -46.0, latitude: 3.0, description: "Continuing down the northern coast of Brazil, past the state of Maranhão.", type: "Road" },
+    { name: "Offshore Point 98", longitude: -42.0, latitude: -0.0, description: "Sailing along the northeastern coast of Brazil, bypassing the states of Piauí and Ceará.", type: "Road" },
+    { name: "Offshore Point 99", longitude: -32.0, latitude: -3.0, description: "Passing the easternmost point of South America, Cape São Roque.", type: "Road" },
+    { name: "Offshore Point 100", longitude: -33.0, latitude: -7.0, description: "Skirting the coast of Bahia, navigating the South Atlantic currents.", type: "Road" },
+    { name: "Offshore Point 101", longitude: -39.0, latitude: -19.0, description: "Approaching the port of Santos, preparing for entry and berthing procedures.", type: "Road" },
+{
+    "name": "Brazil",
+    "longitude": -39.8,
+    "latitude": -18.9608,
+    "description": "<div><h1>Brazil:</h1><p>La gastronomía de Brasil es un exuberante festín de sabores y texturas, con platos como la feijoada, moqueca, y caipirinha, reflejando la diversidad cultural del país, en una cocina que vibra con la alegría y el color de su gente.</p><ul><li>L'Samba Rodizio: El asador será colocado en un área del restaurante a la vista del comensal protegido con cristal para evitar la fuerte filtración de olores. Además, montará un salad bar para self-service.</li></ul></div>",
+    "type": "Interest"
+},
+    { name: "Offshore Point 103", longitude: -39.0, latitude: -19.0, description: "Approaching the port of Santos, preparing for entry and berthing procedures.", type: "Road" },
+    { name: "Offshore Point 104", longitude: -33.0, latitude: -7.0, description: "Skirting the coast of Bahia, navigating the South Atlantic currents.", type: "Road" },
+    { name: "Offshore Point 105", longitude: -32.0, latitude: -3.0, description: "Passing the easternmost point of South America, Cape São Roque.", type: "Road" },
+    { name: "Offshore Point 106", longitude: -42.0, latitude: -0.0, description: "Sailing along the northeastern coast of Brazil, bypassing the states of Piauí and Ceará.", type: "Road" },
+    { name: "Offshore Point 107", longitude: -46.0, latitude: 3.0, description: "Continuing down the northern coast of Brazil, past the state of Maranhão.", type: "Road" },
+    { name: "Offshore Point 108", longitude: -50.0, latitude: 5.0, description: "Entering Brazilian waters, moving along the coast of Amapá and Pará.", type: "Road" },
+    { name: "Offshore Point 109", longitude: -55.0, latitude: 7.0, description: "Navigating clear of the Amazon River delta and the coastal waters of Guyana.", type: "Road" },
+    { name: "Offshore Point 110", longitude: -60.0, latitude: 9.0, description: "Sailing past the Orinoco River delta, avoiding shallow waters and river outflows.", type: "Road" },
+    { name: "Offshore Point 111", longitude: -65.0, latitude: 11.0, description: "Approaching the northeastern coast of Venezuela.", type: "Road" },
+{
+    "name": "Santo Domingo, DR",
+    "longitude": -69.7,
+    "latitude": 18.4,
+    "description": "<div><h1>República Dominicana:</h1><p>La gastronomía de la República Dominicana es un cálido encuentro de influencias taínas, africanas y españolas, destacando platos como el sancocho, mangú, y la bandera dominicana, en una cocina que celebra la abundancia de sus productos tropicales y la tradición de la comida casera y festiva.</p><ul><li>Caribbean Reef -Bar Martini: Disfruta de refrescantes coctéles tropicales en este bar caribeño.</li></ul></div>",
+    "type": "Interest"
+}
+
 ];
 
 
@@ -286,6 +398,11 @@ function checkWaypointProximityAndSelect() {
     let nearestWaypoint = null;
     let isInterestPoint = false; // Track whether the nearest waypoint is an interest point
 
+  positionProperty.setInterpolationOptions({
+    interpolationDegree: 2, // You can adjust this degree
+    interpolationAlgorithm: Cesium.HermitePolynomialApproximation // This algorithm provides smooth paths
+});
+
     // Iterate through each waypoint to find the nearest one
     waypoints.forEach(waypoint => {
         var waypointPosition = Cesium.Cartesian3.fromDegrees(waypoint.longitude, waypoint.latitude);
@@ -322,7 +439,6 @@ function checkWaypointProximityAndSelect() {
 
 // Regularly check for proximity to update the infoBox accordingly
 setInterval(checkWaypointProximityAndSelect, 1000);  // Check every second
-
 function updateWaypointEntities() {
     waypoints.forEach(waypoint => {
         // Create a unique id for each waypoint entity for identification
@@ -330,19 +446,12 @@ function updateWaypointEntities() {
 
         // Check if the entity already exists, if not, create a new one
         var existingEntity = viewer.entities.getById(id);
-        if (!existingEntity) {
+        if (!existingEntity && waypoint.type !== "Road") { // Skip adding Road waypoints
             // Default values for interest waypoints
-            let pointColor = Cesium.Color.RED;
+            let pointColor = Cesium.Color.CADETBLUE;
             let pixelSize = 10;
             let showLabel = true;
             
-            // Adjustments for road waypoints
-            if (waypoint.type === "Road") {
-                pointColor = Cesium.Color.WHITE;
-                pixelSize = 5;
-                showLabel = false;  // Don't show label for road waypoints
-            }
-
             viewer.entities.add({
                 id: id,
                 name: waypoint.name,
@@ -360,7 +469,7 @@ function updateWaypointEntities() {
                     verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
                     pixelOffset: new Cesium.Cartesian2(0, -10)
                 } : undefined,
-                description: showLabel ? waypoint.description : undefined  // Set description only for interest waypoints
+                description: waypoint.description  // Set description for waypoints
             });
         }
     });
@@ -368,6 +477,7 @@ function updateWaypointEntities() {
 
 // Call the function to update entities on the globe
 updateWaypointEntities();
+
 
 
 // Call checkWaypointProximity periodically, for example, using setInterval
