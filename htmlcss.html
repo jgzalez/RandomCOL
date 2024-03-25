@@ -2,12 +2,12 @@
   
 @import url(../templates/bucket.css);
 .cesium-infoBox {
-    background-color: navy; /* Change to your desired background color */
+    background-color: cadetblue; /* Change to your desired background color */
     color: white; /* Change to your desired text color */
 }
 
 .cesium-infoBox .cesium-infoBox-title {
-    background-color: darkblue; /* Change to your desired title background color */
+    background-color: teal; /* Change to your desired title background color */
 }
   
 .cesium-viewer .cesium-widget .cesium-infoBox {
@@ -16,6 +16,9 @@
     left: 25px; /* Distance from the left side of the viewer */
     right: auto; /* Reset the default positioning */
 }
+      .cesium-viewer .cesium-widget-credits {
+        display: none !important;
+    }
   
   .cesium-viewer .cesium-infoBox {
     position: fixed; /* Use fixed positioning relative to the viewport */
@@ -31,5 +34,5 @@
     <div id="cesiumContainer" class="fullSize"></div>
     <div id="loadingOverlay"><h1>Loading...</h1></div>
     <div id="toolbar"></div>
-    <img id="htmlOverlay" style="position: absolute" src="../images/Cesium_Logo_overlay.png">
+<img id="htmlOverlay" src="https://cruiseonland.com/wp-content/uploads/2022/11/Logo-COL-FC-300x190.png" style="position: absolute; width: 150px; top: 10px; left: 10px;">
     
