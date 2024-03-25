@@ -16,7 +16,13 @@ const viewer = new Cesium.Viewer("cesiumContainer", {
 
 // Define refined waypoints for the ship's journey avoiding land.
 const waypoints = [
-        { name: "Departure", longitude: -150.8583, latitude: 19.3069, description: "Aloha! Welcome to the beautiful islands of Hawaii.", type: "Interest" },
+{
+    "name": "Salida",
+    "longitude": -150.8583,
+    "latitude": 19.3069,
+    "description": "<div><h1>Bienvenidos al Viaje Gastronómico de Cruise On Land!</h1><p>Naveguemos a través del mundo en búsqueda de las delicias y algunos de los platos de los destinos gastronómicos más importantes y representativos del planeta.</p><p>Acompáñenos a este viaje culinario, donde su paladar podrá degustar los sabores y delicias de cada esquina del mundo.</p></div>",
+    "type": "Interest"
+},
 
 {
     "name": "Hawaii, USA",
@@ -311,7 +317,7 @@ shipModel.orientation = new Cesium.VelocityOrientationProperty(positionProperty)
 // En vez de eso, usa el siguiente código:
 // Additional logic to ensure the camera follows the ship if needed:
 var baseDistance = 200000; // Horizontal distance from the camera to the ship
-var baseHeight = 6500000;    // Height of the camera from the ship, adjust this for a better angle
+var baseHeight = 5000000;    // Height of the camera from the ship, adjust this for a better angle
 var startAngle = -Math.PI / 4; // Starting angle for the camera's horizontal position relative to the ship
 var angleVariation = Math.PI / 18; // Reduced range of the angle variation for smoother effect
 
