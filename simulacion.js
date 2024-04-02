@@ -284,7 +284,7 @@ var shipModel = viewer.entities.add({
     name: 'Ship',
     position: Cesium.Cartesian3.fromDegrees(waypoints[0].longitude, waypoints[0].latitude),
     model: {
-        uri: 'https://raw.githubusercontent.com/jgzalez/FlutterAct1/master/yatch_II.glb',
+        uri: 'https://raw.githubusercontent.com/jgzalez/SimulacionRutaCulinariaCOL/main/yatch_II.glb',
         minimumPixelSize: 128,
         maximumScale: 5000
     }
