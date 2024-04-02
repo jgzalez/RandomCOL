@@ -280,6 +280,7 @@ const waypoints = [
 let lastNearestWaypoint = null; // This will keep track of the last nearest waypoint
 
 // Create and add the ship model entity.
+// Añades el modelo del barco a tu visualización de Cesium
 var shipModel = viewer.entities.add({
     name: 'Ship',
     position: Cesium.Cartesian3.fromDegrees(waypoints[0].longitude, waypoints[0].latitude),
@@ -290,11 +291,24 @@ var shipModel = viewer.entities.add({
     }
 });
 
-// Automatically zoom the camera to the ship model after adding it to the scene.
-viewer.zoomTo(shipModel);
-
-// Set up the position property for animating the ship's movement.
+// Configuras las propiedades de animación y posición del barco
 var positionProperty = new Cesium.SampledPositionProperty();
+// Código para configurar positionProperty con muestras...
+
+// Usa CallbackProperty para personalizar la orientación basada en la velocidad y dirección
+shipModel.orientation = new Cesium.CallbackProperty(function (time, result) {
+    var position = positionProperty.getValue(time);
+    var nextPosition = positionProperty.getValue(Cesium.JulianDate.addSeconds(time, 1, new Cesium.JulianDate()));
+    if (!position || !nextPosition) return result;
+    
+    var velocityVector = Cesium.Cartesian3.subtract(nextPosition, position, new Cesium.Cartesian3());
+    return Cesium.Transforms.headingPitchRollQuaternion(position, new Cesium.HeadingPitchRoll(
+        Cesium.Cartesian3.angleBetween(Cesium.Cartesian3.UNIT_NORTH, velocityVector),
+        0,
+        0
+    ), result);
+}, false);
+
 var startTime = Cesium.JulianDate.now();
 var stopTime = new Cesium.JulianDate();
 var travelTimeHours = waypoints.length * 2; // Adjust based on desired speed and realism.
@@ -317,7 +331,7 @@ shipModel.orientation = new Cesium.VelocityOrientationProperty(positionProperty)
 // En vez de eso, usa el siguiente código:
 // Additional logic to ensure the camera follows the ship if needed:
 var baseDistance = 200000; // Horizontal distance from the camera to the ship
-var baseHeight = 5000000;    // Height of the camera from the ship, adjust this for a better angle
+var baseHeight = 3000000;    // Height of the camera from the ship, adjust this for a better angle
 var startAngle = -Math.PI / 4; // Starting angle for the camera's horizontal position relative to the ship
 var angleVariation = Math.PI / 18; // Reduced range of the angle variation for smoother effect
 
@@ -325,7 +339,7 @@ var totalAnimationTime = 600; // Time for one cycle of the angle animation for s
 var animationStartTime = viewer.clock.currentTime.secondsOfDay; // The start time of the animation
 
 var lastCameraPosition = null; // Keep track of the last camera position for smoothing
-var dampingFactor = 0.01; // Damping factor to smooth out camera movements
+var dampingFactor = 0.009; // Damping factor to smooth out camera movements
 
 viewer.scene.postRender.addEventListener(function () {
     var currentTime = viewer.clock.currentTime.secondsOfDay;
@@ -406,7 +420,7 @@ function checkWaypointProximityAndSelect() {
 
   positionProperty.setInterpolationOptions({
     interpolationDegree: 2, // You can adjust this degree
-    interpolationAlgorithm: Cesium.HermitePolynomialApproximation // This algorithm provides smooth paths
+    interpolationAlgorithm: Cesium.LagrangePolynomialApproximation // This algorithm provides smooth paths
 });
 
     // Iterate through each waypoint to find the nearest one
@@ -453,6 +467,8 @@ function updateWaypointEntities() {
         // Check if the entity already exists, if not, create a new one
         var existingEntity = viewer.entities.getById(id);
         if (!existingEntity && waypoint.type !== "Road") { // Skip adding Road waypoints
+          let countryCode = getCountryCodeFromName(waypoint.name); // Obtiene el código de país ISO 3166-1 alpha-2
+            let flagUrl = `https://flagcdn.com/16x12/${countryCode}.png`;
             // Default values for interest waypoints
             let pointColor = Cesium.Color.CADETBLUE;
             let pixelSize = 10;
@@ -462,9 +478,10 @@ function updateWaypointEntities() {
                 id: id,
                 name: waypoint.name,
                 position: Cesium.Cartesian3.fromDegrees(waypoint.longitude, waypoint.latitude),
-                point: {
-                    pixelSize: pixelSize,
-                    color: pointColor
+               billboard: {
+                    image: flagUrl,
+                    width: 32, // Puedes ajustar el tamaño según tus necesidades
+                    height: 24
                 },
                 label: showLabel ? {
                     text: waypoint.name,
@@ -479,6 +496,46 @@ function updateWaypointEntities() {
             });
         }
     });
+}
+
+function getCountryCodeFromName(name) {
+    // Primero, verifica que "name" es una cadena no nula y no indefinida.
+    if (typeof name !== "string" || !name) {
+        console.error("Nombre de waypoint inválido o indefinido:", name);
+        return undefined; // O podrías retornar un código predeterminado o manejar el error como prefieras.
+    }
+
+    // Objeto de mapeo que asocia nombres de waypoints con códigos de país ISO 3166-1 alpha-2
+    const nameToCountryCodeMap = {
+        "Hawaii, USA": "us",
+        "Japan": "jp",
+        "Shanghai, China": "cn",
+        "Laem Chabang Port, Thailand": "th",
+        "Port Klang, Malaysia": "my",
+        "Chennai, India": "in",
+        "Genoa, Italy": "it",
+        "Lisbon, Portugal": "pt",
+        "Vigo, Spain": "es",
+        "Hamburg, Germany": "de",
+        "Halifax, Nova Scotia, Canada": "ca",
+        "Miami, USA": "us",
+        "Veracruz, Mexico": "mx",
+        "Cartagena, Colombia": "co",
+        "Santo Domingo, DR": "do",
+        "Brazil" : "br",
+        "Middle East" : "lb"
+    };
+
+    // Normaliza el nombre para manejar variaciones en la capitalización o espacios.
+    const normalized = name.trim().toLowerCase();
+
+    // Encuentra el código de país correspondiente en el objeto de mapeo, si existe.
+    const countryCode = Object.keys(nameToCountryCodeMap).find(key =>
+        key.trim().toLowerCase() === normalized
+    );
+
+    // Devuelve el código de país correspondiente o undefined si no se encuentra.
+    return countryCode ? nameToCountryCodeMap[countryCode] : undefined;
 }
 
 // Call the function to update entities on the globe
