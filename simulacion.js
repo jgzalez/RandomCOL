@@ -31,41 +31,55 @@ const waypoints = [
     "description": "<div><h1>Hawaii:</h1><p>Un vibrante mosaico de sabores, influenciada por las culturas polinesia, asiática y americana, destacando platos como el<strong><em> poke</em></strong>, el <strong><em>luau pig</em></strong>, y el<strong><em> loco moco</em></strong>, todos enmarcados por el exótico escenario de sus islas.</p><ol><li>Deleite su paladar en nuestro restaurante <strong class='ql-size-large'><em>Pacific Rim</em></strong>. Una exótica cocina mixta que fusiona influencias<em> francesas, asiáticas y polinesias.</em></li><li>Visite el <strong class='ql-size-large'><em>Bar Tiki</em></strong>, donde encontrará una amplia diversidad de refrescantes coctéles tropicales.</li></ol></div>",
     "type": "Interest"
 },
+    { name: "Pacific Point 1231", longitude: 190, latitude: 25, description: "You've reached Pacific Point 1, navigating through the vast Pacific Ocean.", type: "Road" },
 
-  
-    { name: "Pacific Point 1", longitude: -170, latitude: 25, description: "You've reached Pacific Point 1, navigating through the vast Pacific Ocean.", type: "Road" },
-    { name: "Pacific Point 2", longitude: 160, latitude: 30, description: "This is Pacific Point 2, closer to the Asian continent.", type: "Road" },
-    { name: "Pacific Point 3", longitude: 150, latitude: 35, description: "Approaching Japan: Pacific Point 3 achieved.", type: "Road" },
+      { name: "Pacific Point 12321", longitude: 179, latitude: 25, description: "You've reached Pacific Point 1, navigating through the vast Pacific Ocean.", type: "Road" },
+
+    { name: "Pacific Point 1", longitude: 170, latitude: 25, description: "You've reached Pacific Point 1, navigating through the vast Pacific Ocean.", type: "Road" },
+    {
+  name: "Intermediate Point 1",
+  longitude: 165,
+  latitude: 27.5,
+  description: "Midway checkpoint between Pacific Point 1 and Pacific Point 2, smoothing the journey across the Pacific.",
+  type: "Road"
+},
+  { name: "Pacific Point 2", longitude: 160, latitude: 30, description: "This is Pacific Point 2, closer to the Asian continent.", type: "Road" },
+    {
+  name: "Intermediate Point 2",
+  longitude: 155,
+  latitude: 32.5,
+  description: "Midway checkpoint between Pacific Point 2 and Pacific Point 3, marking the continued journey across the Pacific towards Asia.",
+  type: "Road"
+},
+  { name: "Pacific Point 3", longitude: 150, latitude: 35, description: "Approaching Japan: Pacific Point 3 achieved.", type: "Road" },
 
   {
     "name": "Japan",
-    "longitude": 139.6503,
+    "longitude": 140.6503,
     "latitude": 35.6762,
     "description": "<div><h1>Japón:</h1><p>Una elegante expresión de temporada y equilibrio, caracterizada por su <strong><em>sushi</em></strong>, <strong><em>sashimi</em></strong>, <strong><em>ramen</em></strong>, y <strong><em>tempura</em></strong>, con un profundo respeto por la frescura de los ingredientes y la estética en su presentación.</p><ol><li>Conozca la comida tradicional japonesa en nuestro menú <em>YAKUSHIMA:</em> donde encontrará los principales platos del país del sol naciente.</li></ol></div>",
     "type": "Interest"
   },
     
-    { name: "Offshore Point 1", longitude: 138.0, latitude: 34.5, description: "Leaving Tokyo Bay, entering the Pacific Ocean.", type: "Road" },
     { name: "Offshore Point 2", longitude: 136.5, latitude: 33.0, description: "Navigating through the Pacific, southwest of Izu Peninsula.", type: "Road" },
     { name: "Offshore Point 3", longitude: 134.0, latitude: 31.5, description: "Approaching the Kii Peninsula.", type: "Road" },
     { name: "Offshore Point 4", longitude: 132.0, latitude: 30.0, description: "Skirting the southern coast of Wakayama Prefecture.", type: "Road" },
     { name: "Offshore Point 5", longitude: 129.0, latitude: 29.0, description: "Passing south of Kyushu Island.", type: "Road" },
     { name: "Offshore Point 6", longitude: 126.0, latitude: 28.0, description: "Crossing the East China Sea.", type: "Road" },
     { name: "Offshore Point 7", longitude: 124.0, latitude: 30.0, description: "Navigating through international waters.", type: "Road" },
-    { name: "Offshore Point 8", longitude: 122.5, latitude: 31.0, description: "Approaching the Yangtze River delta.", type: "Road" },
 {
     "name": "Shanghai, China",
-    "longitude": 121.4737,
+    "longitude": 122.4737,
     "latitude": 31.2304,
     "description": "<div><h1>China:</h1><p>Un vasto panorama de sabores y técnicas regionales, desde el <em>dim sum</em> cantonés hasta el picante <em>sichuan</em>, destacando la importancia del equilibrio entre color, sabor y textura en cada plato.</p><p>Disfrute de platos como:</p><ul><li>Dim Sum</li><li>Carnes Sichuán</li><li>Pollo Kung Pao</li></ul><p>Entre otras delicias de esta potencia culinaria y gastronómica.</p></div>",
     "type": "Interest"
 },
   
-      { name: "Offshore Point 9", longitude: 122.0, latitude: 28.0, description: "Exiting the Yangtze River delta into the East China Sea.", type: "Road" },
-    { name: "Offshore Point 10", longitude: 119.0, latitude: 25.0, description: "Bypassing the Taiwanese coast, moving into the northern part of the South China Sea.", type: "Road" },
+      { name: "Offshore Point 9", longitude: 123.0, latitude: 28.0, description: "Exiting the Yangtze River delta into the East China Sea.", type: "Road" },
+    { name: "Offshore Point 10", longitude: 120.0, latitude: 25.0, description: "Bypassing the Taiwanese coast, moving into the northern part of the South China Sea.", type: "Road" },
     { name: "Offshore Point 11", longitude: 116.0, latitude: 20.0, description: "Navigating through the open waters of the South China Sea, east of Hainan.", type: "Road" },
-    { name: "Offshore Point 12", longitude: 113.0, latitude: 15.0, description: "Passing by the Paracel Islands, maintaining a course in international waters.", type: "Road" },
-    { name: "Offshore Point 13", longitude: 110.0, latitude: 11.0, description: "Skirting the northeastern coasts of Vietnam.", type: "Road" },
+    { name: "Offshore Point 12", longitude: 114.0, latitude: 15.0, description: "Passing by the Paracel Islands, maintaining a course in international waters.", type: "Road" },
+    { name: "Offshore Point 13", longitude: 111.0, latitude: 11.0, description: "Skirting the northeastern coasts of Vietnam.", type: "Road" },
     { name: "Offshore Point 14", longitude: 107.0, latitude: 9.0, description: "Crossing south of Vietnam, approaching the Gulf of Thailand.", type: "Road" },
     { name: "Offshore Point 15", longitude: 104.0, latitude: 8.0, description: "Entering the Gulf of Thailand, steering clear of the Cambodian coast.", type: "Road" },
     { name: "Offshore Point 16", longitude: 101.0, latitude: 9.0, description: "Navigating the northern part of the Gulf of Thailand, approaching Thai waters.", type: "Road" },
@@ -78,13 +92,10 @@ const waypoints = [
 },
   
     // Corrected waypoints from Thailand to Malaysia
-  { name: "Offshore Point 17", longitude: 100.2, latitude: 12.5, description: "Heading southwest, moving away from the Gulf of Thailand into open sea.", type: "Road" },
-    { name: "Offshore Point 18", longitude: 99.5, latitude: 10.0, description: "Clear of Thailand's southern coast, in the Andaman Sea.", type: "Road" },
-    { name: "Offshore Point 19", longitude: 99.0, latitude: 8.0, description: "Further into the Andaman Sea, avoiding landmasses.", type: "Road" },
-    { name: "Offshore Point 20", longitude: 98.5, latitude: 7.0, description: "Navigating deeper into the Andaman Sea, steering clear of coastal areas.", type: "Road" },
-    { name: "Offshore Point 21", longitude: 98.0, latitude: 6.0, description: "Approaching the northern tip of Sumatra, continuing on a clear maritime path.", type: "Road" },
-    { name: "Offshore Point 22", longitude: 98.0, latitude: 5.0, description: "Skirting around the northern coast of Sumatra, entering the Strait of Malacca.", type: "Road" },
-    { name: "Offshore Point 23", longitude: 99.0, latitude: 4.0, description: "Midway through the Strait of Malacca, maintaining a safe distance from land.", type: "Road" },
+  { name: "Offshore Point 17", longitude: 105.2, latitude: 5.5, description: "Heading southwest, moving away from the Gulf of Thailand into open sea.", type: "Road" },
+    { name: "Offshore Point 19", longitude: 105.0, latitude: 1.0, description: "Further into the Andaman Sea, avoiding landmasses.", type: "Road" },
+    { name: "Offshore Point 21", longitude: 103.0, latitude: 1.2, description: "Approaching the northern tip of Sumatra, continuing on a clear maritime path.", type: "Road" },
+    { name: "Offshore Point 23", longitude: 101.0, latitude: 3, description: "Midway through the Strait of Malacca, maintaining a safe distance from land.", type: "Road" },
 {
     "name": "Port Klang, Malaysia",
     "longitude": 101.3929,
@@ -95,8 +106,6 @@ const waypoints = [
     
   // Waypoints from China to India
     { name: "Offshore Point 24", longitude: 98.0, latitude: 6.0, description: "Approaching the northern tip of Sumatra, continuing on a clear maritime path.", type: "Road" },
-    { name: "Offshore Point 25", longitude: 98.0, latitude: 5.0, description: "Skirting around the northern coast of Sumatra, entering the Strait of Malacca.", type: "Road" },
-    { name: "Offshore Point 26", longitude: 99.0, latitude: 4.0, description: "Passing west of the Andaman and Nicobar Islands.", type: "Road" },
     { name: "Offshore Point 27", longitude: 92.0, latitude: 9.0, description: "Sailing across the northern part of the Andaman Sea into the Bay of Bengal.", type: "Road" },
     { name: "Offshore Point 28", longitude: 90.0, latitude: 13.0, description: "Continuing journey through the Bay of Bengal, approaching the Indian coast.", type: "Road" },
     { name: "Offshore Point 29", longitude: 88.0, latitude: 15.0, description: "Navigating the central Bay of Bengal, maintaining a course towards Chennai.", type: "Road" },
@@ -230,8 +239,7 @@ const waypoints = [
     "type": "Interest"
 },
   { name: "Offshore Point 83", longitude: -87.0, latitude: 22.0, description: "Passing west of Cuba, maintaining course through the Gulf.", type: "Road" },
-    { name: "Offshore Point 84", longitude: -90.0, latitude: 22.0, description: "Approaching the Yucatan Channel, between Cuba and Mexico.", type: "Road" },
-    { name: "Offshore Point 85", longitude: -93.0, latitude: 20.0, description: "Sailing along the southern Gulf of Mexico, near the Yucatan Peninsula.", type: "Road" },
+   
 {
     "name": "Cartagena, Colombia",
     "longitude": -75.5258,
@@ -541,6 +549,21 @@ function getCountryCodeFromName(name) {
 // Call the function to update entities on the globe
 updateWaypointEntities();
 
+// Assuming you have your waypoints array and a Cesium viewer instance
+waypoints.forEach((waypoint) => {
+    if (waypoint.type === "Road") {
+        // Add a point for each road waypoint
+        viewer.entities.add({
+            position: Cesium.Cartesian3.fromDegrees(waypoint.longitude, waypoint.latitude),
+            point: {
+                pixelSize: 5,
+                color: Cesium.Color.YELLOW, // Choose a color that stands out
+                outlineColor: Cesium.Color.BLACK,
+                outlineWidth: 1
+            }
+        });
+    }
+});
 
 
 // Call checkWaypointProximity periodically, for example, using setInterval
