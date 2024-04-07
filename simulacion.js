@@ -1,3 +1,4 @@
+
 const viewer = new Cesium.Viewer("cesiumContainer", {
     sceneMode: Cesium.SceneMode.SCENE3D,
     infobox: true,      // Keep the infobox
@@ -12,7 +13,11 @@ const viewer = new Cesium.Viewer("cesiumContainer", {
     fullscreenButton: true, // Remove the fullscreen button
     vrButton: false,       // Remove the VR button
     selectionIndicator: false // Remove the selection indicator
+
+
 });
+
+
 
 // Define refined waypoints for the ship's journey avoiding land.
 const waypoints = [
@@ -395,6 +400,14 @@ viewer.scene.postRender.addEventListener(function () {
     });
 });
 
+function resumeAnimation() {
+  if (!viewer.clock.shouldAnimate) {
+    viewer.clock.shouldAnimate = true; // Esto reanuda la animación
+    console.log("Animación reanudada.");
+  }
+}
+
+
 function checkSimulationState() {
     console.log(`Simulation paused: ${!viewer.clock.shouldAnimate}`);
     console.log(`Current simulation time: ${Cesium.JulianDate.toIso8601(viewer.clock.currentTime)}`);
@@ -564,7 +577,6 @@ waypoints.forEach((waypoint) => {
         });
     }
 });
-
 
 // Call checkWaypointProximity periodically, for example, using setInterval
 setInterval(() => {
