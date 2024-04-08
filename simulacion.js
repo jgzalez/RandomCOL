@@ -207,7 +207,7 @@ const waypoints = [
     { name: "Offshore Point 68", longitude: -3.0, latitude: 60.0, description: "Crossing the northern Atlantic, moving between Iceland and the Faroe Islands.", type: "Road" },
     { name: "Offshore Point 69", longitude: -43.0, latitude: 55.0, description: "Mid-Atlantic route, halfway between Europe and North America.", type: "Road" },
     { name: "Offshore Point 70", longitude: -50.0, latitude: 50.0, description: "Approaching Canadian waters, navigating through cooler northern currents.", type: "Road" },
-    { name: "Offshore Point 71", longitude: -55.0, latitude: 45.0, description: "Entering the approaches to the Gulf of Saint Lawrence.", type: "Road" },
+    { name: "Offshore Point 71", longitude: -55.0, latitude: 43.0, description: "Entering the approaches to the Gulf of Saint Lawrence.", type: "Road" },
     { name: "Offshore Point 72", longitude: -60.0, latitude: 44.0, description: "Passing by Sable Island, preparing for the final approach to Halifax.", type: "Road" },
 {
     "name": "Halifax, Nova Scotia, Canada",
@@ -240,7 +240,8 @@ const waypoints = [
     "type": "Interest"
 },
   { name: "Offshore Point 83", longitude: -87.0, latitude: 22.0, description: "Passing west of Cuba, maintaining course through the Gulf.", type: "Road" },
-   
+   { name: "Offshore Point 84", longitude: -84, latitude: 15.0, description: "Passing west of Cuba, maintaining course through the Gulf.", type: "Road" },
+
 {
     "name": "Cartagena, Colombia",
     "longitude": -75.5258,
@@ -248,6 +249,7 @@ const waypoints = [
     "description": "<div><h1>Colombia:</h1><p>La gastronomía de Colombia es un vibrante reflejo de su diversidad geográfica y cultural, destacando platos como el ajiaco, bandeja paisa, y arepas, en una cocina que combina sabores indígenas, africanos y españoles, celebrando la riqueza de sus ingredientes locales.</p></div>",
     "type": "Interest"
 },
+  
   { name: "Offshore Point 91", longitude: -74.0, latitude: 12.0, description: "Navigating southeast along the Caribbean coast of Colombia.", type: "Road" },
     { name: "Offshore Point 92", longitude: -70.0, latitude: 12.0, description: "Passing the Guajira Peninsula, moving towards the open Atlantic waters.", type: "Road" },
     { name: "Offshore Point 93", longitude: -65.0, latitude: 11.0, description: "Approaching the northeastern coast of Venezuela.", type: "Road" },
@@ -296,7 +298,7 @@ var shipModel = viewer.entities.add({
     model: {
         uri: 'https://raw.githubusercontent.com/jgzalez/SimulacionRutaCulinariaCOL/main/yatch_II.glb',
         minimumPixelSize: 128,
-        maximumScale: 5000
+        maximumScale: 2500
     }
 });
 
