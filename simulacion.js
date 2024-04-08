@@ -1,3 +1,21 @@
+// Define a constant speed in km/h
+const speedKmH = 30; // You can adjust this value as needed
+const speedMS = speedKmH / 3.6; // Convert speed to meters per second
+
+// Helper function to calculate distance between two lat/lon points on Earth
+function calculateDistanceOnEarth(lat1, lon1, lat2, lon2) {
+    const earthRadiusKm = 6371;
+    const dLat = Cesium.Math.toRadians(lat2 - lat1);
+    const dLon = Cesium.Math.toRadians(lon2 - lon1);
+    const lat1Rad = Cesium.Math.toRadians(lat1);
+    const lat2Rad = Cesium.Math.toRadians(lat2);
+
+    const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos(lat1Rad) * Math.cos(lat2Rad) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return earthRadiusKm * c * 1000; // Return distance in meters
+}
+
 const viewer = new Cesium.Viewer("cesiumContainer", {
     sceneMode: Cesium.SceneMode.SCENE3D,
     infobox: true,      // Keep the infobox
@@ -123,8 +141,7 @@ const waypoints = [
   
   
      { name: "Offshore Point 31", longitude: 79.0, latitude: 9.0, description: "Leaving the Bay of Bengal, rounding the Indian Peninsula.", type: "Road" },
-    { name: "Offshore Point 32", longitude: 76.0, latitude: 7.0, description: "Passing by the southern tip of India, navigating near Kanyakumari.", type: "Road" },
-    { name: "Offshore Point 33", longitude: 72.0, latitude: 8.0, description: "Entering the Arabian Sea, west of the Maldives.", type: "Road" },
+    { name: "Offshore Point 33", longitude: 72.0, latitude: 11.0, description: "Entering the Arabian Sea, west of the Maldives.", type: "Road" },
     { name: "Offshore Point 34", longitude: 70.0, latitude: 12.0, description: "Sailing northwest, approaching the Indian west coast.", type: "Road" },
     { name: "Offshore Point 35", longitude: 68.0, latitude: 15.0, description: "Moving along the western coast of India, passing Mumbai.", type: "Road" },
     { name: "Offshore Point 36", longitude: 65.0, latitude: 20.0, description: "Continuing through the Arabian Sea, clear of the Indian coast.", type: "Road" },
@@ -132,28 +149,29 @@ const waypoints = [
     { name: "Offshore Point 38", longitude: 57.0, latitude: 25.0, description: "Navigating the Strait of Hormuz, between Oman and Iran.", type: "Road" },
 {
     "name": "Middle East",
-    "longitude": 57,
+    "longitude": 55.8708,
     "latitude": 25.2048,
     "description": "<div><h1>Medio Oriente:</h1><p>La gastronomía del Medio Oriente es un festín de sabores ricos y texturas variadas, destacando platos como:</p><ol><li>El Hummus</li><li>Los Kebabs</li><li>El Falafel</li></ol><p>En una tradición culinaria que celebra el uso generoso de especias y hierbas, y la importancia de compartir la comida.</p></div>",
     "type": "Interest"
 },
     // Waypoints from Middle East to Italy
       { name: "Offshore Point 31", longitude: 57.0, latitude: 25.0, description: "Exiting the Arabian Gulf, entering the Gulf of Oman.", type: "Road" },
-    { name: "Offshore Point 39", longitude: 60.0, latitude: 23.0, description: "Leaving the Persian Gulf, entering the Gulf of Oman.", type: "Road" },
+    { name: "Offshore Point 41", longitude: 60.0, latitude: 22.0, description: "Out into the Arabian Sea, making a course for the Indian Ocean.", type: "Road" },
     
   { name: "Offshore Point 42", longitude: 62.0, latitude: 21.0, description: "Passing by the southern coast of Iran.", type: "Road" },
-      { name: "Offshore Point 40", longitude: 55.0, latitude: 15.0, description: "Navigating along the coast of Oman, heading towards the Arabian Sea.", type: "Road" },
-      { name: "Offshore Point 40", longitude: 50.0, latitude: 13.0, description: "Navigating along the coast of Oman, heading towards the Arabian Sea.", type: "Road" },
+  { name: "Offshore Point 40", longitude: 58.0, latitude: 15.0, description: "Navigating along the coast of Oman, heading towards the Arabian Sea.", type: "Road" },
 
-  { name: "Offshore Point 442", longitude: 45.0, latitude: 12.0, description: "Entering the Gulf of Aden, between Yemen and Djibouti.", type: "Road" },
-
-    { name: "Offshore Point 45", longitude: 42.0, latitude: 14.7, description: "Sailing westward through the Bab-el-Mandeb Strait into the Red Sea.", type: "Road" },
-    { name: "Offshore Point 46", longitude: 38.0, latitude: 21.0, description: "Navigating the Red Sea, heading towards the Suez Canal.", type: "Road" },
+  { name: "Offshore Point 40", longitude: 55.0, latitude: 15.0, description: "Navigating along the coast of Oman, heading towards the Arabian Sea.", type: "Road" },
+  
+    { name: "Offshore Point 44", longitude: 48.0, latitude: 11.8, description: "Entering the Gulf of Aden, between Yemen and Djibouti.", type: "Road" },
+    { name: "Offshore Point 45", longitude: 41.0, latitude: 14.7, description: "Sailing westward through the Bab-el-Mandeb Strait into the Red Sea.", type: "Road" },
+    { name: "Offshore Point 46", longitude: 39.0, latitude: 21.0, description: "Navigating the Red Sea, heading towards the Suez Canal.", type: "Road" },
     { name: "Suez Canal Entrance", longitude: 32.532, latitude: 29.947, description: "Approaching the Suez Canal from the Red Sea.", type: "Road" },
-    { name: "Suez Canal Exit2", longitude: 30.4, latitude: 33, description: "Exiting the Suez Canal, entering the Mediterranean Sea.", type: "Road" },
+    { name: "Suez Canal Exit", longitude: 32.349, latitude: 32, description: "Exiting the Suez Canal, entering the Mediterranean Sea.", type: "Road" },
 
     // Waypoints from Suez Canal to Italy
-    { name: "Offshore Point 48", longitude: 25.0, latitude: 35.0, description: "Crossing the Mediterranean, north of Libya.", type: "Road" },
+    { name: "Offshore Point 47", longitude: 30.0, latitude: 33.0, description: "Passing by the northern coast of Egypt.", type: "Road" },
+    { name: "Offshore Point 48", longitude: 25.0, latitude: 36.5, description: "Crossing the Mediterranean, north of Libya.", type: "Road" },
     { name: "Offshore Point 51", longitude: 17.0, latitude: 33.0, description: "Skirting the eastern coast of Italy.", type: "Road" },
     { name: "Offshore Point 401", longitude: 14.0, latitude: 35.0, description: "Approaching the southern tip of Italy, preparing for the final leg to Genoa.", type: "Road" },
 {
@@ -167,7 +185,7 @@ const waypoints = [
     { name: "Offshore Point 421", longitude: 5.0, latitude: 40.0, description: "Approaching the French Riviera, near Nice and Monaco.", type: "Road" },
     { name: "Offshore Point 431", longitude: 3.0, latitude: 39.0, description: "Passing by the Balearic Islands in the western Mediterranean.", type: "Road" },
     { name: "Offshore Point 441", longitude: 0.5, latitude: 38.0, description: "Crossing the sea near Valencia, Spain, heading towards the Strait of Gibraltar.", type: "Road" },
-    { name: "Offshore Point 451", longitude: -3.0, latitude: 36.0, description: "Entering the Strait of Gibraltar, the gateway between the Mediterranean Sea and the Atlantic Ocean.", type: "Road" },
+    { name: "Offshore Point 451", longitude: -5.0, latitude: 36.0, description: "Entering the Strait of Gibraltar, the gateway between the Mediterranean Sea and the Atlantic Ocean.", type: "Road" },
     { name: "Offshore Point 461", longitude: -9.0, latitude: 36.0, description: "Navigating off the southern coast of Portugal, near the Algarve region.", type: "Road" },
     { name: "Offshore Point 471", longitude: -11.0, latitude: 38.5, description: "Approaching Lisbon, preparing for arrival at the port.", type: "Road" },
 {
@@ -205,9 +223,9 @@ const waypoints = [
   { name: "Offshore Point 66", longitude: 7.0, latitude: 55.0, description: "Leaving the North Sea, entering the Norwegian Sea.", type: "Road" },
     { name: "Offshore Point 67", longitude: -1.0, latitude: 59.0, description: "Navigating past the northern tip of the British Isles into the open Atlantic.", type: "Road" },
     { name: "Offshore Point 68", longitude: -3.0, latitude: 60.0, description: "Crossing the northern Atlantic, moving between Iceland and the Faroe Islands.", type: "Road" },
-    { name: "Offshore Point 69", longitude: -43.0, latitude: 55.0, description: "Mid-Atlantic route, halfway between Europe and North America.", type: "Road" },
+    { name: "Offshore Point 69", longitude: -40.0, latitude: 55.0, description: "Mid-Atlantic route, halfway between Europe and North America.", type: "Road" },
     { name: "Offshore Point 70", longitude: -50.0, latitude: 50.0, description: "Approaching Canadian waters, navigating through cooler northern currents.", type: "Road" },
-    { name: "Offshore Point 71", longitude: -55.0, latitude: 43.0, description: "Entering the approaches to the Gulf of Saint Lawrence.", type: "Road" },
+    { name: "Offshore Point 71", longitude: -55.0, latitude: 45.0, description: "Entering the approaches to the Gulf of Saint Lawrence.", type: "Road" },
     { name: "Offshore Point 72", longitude: -60.0, latitude: 44.0, description: "Passing by Sable Island, preparing for the final approach to Halifax.", type: "Road" },
 {
     "name": "Halifax, Nova Scotia, Canada",
@@ -240,8 +258,7 @@ const waypoints = [
     "type": "Interest"
 },
   { name: "Offshore Point 83", longitude: -87.0, latitude: 22.0, description: "Passing west of Cuba, maintaining course through the Gulf.", type: "Road" },
-   { name: "Offshore Point 84", longitude: -84, latitude: 15.0, description: "Passing west of Cuba, maintaining course through the Gulf.", type: "Road" },
-
+   
 {
     "name": "Cartagena, Colombia",
     "longitude": -75.5258,
@@ -249,18 +266,17 @@ const waypoints = [
     "description": "<div><h1>Colombia:</h1><p>La gastronomía de Colombia es un vibrante reflejo de su diversidad geográfica y cultural, destacando platos como el ajiaco, bandeja paisa, y arepas, en una cocina que combina sabores indígenas, africanos y españoles, celebrando la riqueza de sus ingredientes locales.</p></div>",
     "type": "Interest"
 },
-  
-  { name: "Offshore Point 91", longitude: -74.0, latitude: 12.0, description: "Navigating southeast along the Caribbean coast of Colombia.", type: "Road" },
-    { name: "Offshore Point 92", longitude: -70.0, latitude: 12.0, description: "Passing the Guajira Peninsula, moving towards the open Atlantic waters.", type: "Road" },
-    { name: "Offshore Point 93", longitude: -65.0, latitude: 11.0, description: "Approaching the northeastern coast of Venezuela.", type: "Road" },
-    { name: "Offshore Point 94", longitude: -60.0, latitude: 9.0, description: "Sailing past the Orinoco River delta, avoiding shallow waters and river outflows.", type: "Road" },
-    { name: "Offshore Point 95", longitude: -55.0, latitude: 7.0, description: "Navigating clear of the Amazon River delta and the coastal waters of Guyana.", type: "Road" },
-    { name: "Offshore Point 96", longitude: -50.0, latitude: 5, description: "Entering Brazilian waters, moving along the coast of Amapá and Pará.", type: "Road" },
-    { name: "Offshore Point 97", longitude: -46.0, latitude: 3.0, description: "Continuing down the northern coast of Brazil, past the state of Maranhão.", type: "Road" },
-    { name: "Offshore Point 98", longitude: -42.0, latitude: -0.0, description: "Sailing along the northeastern coast of Brazil, bypassing the states of Piauí and Ceará.", type: "Road" },
-    { name: "Offshore Point 99", longitude: -32.0, latitude: -3.0, description: "Passing the easternmost point of South America, Cape São Roque.", type: "Road" },
-    { name: "Offshore Point 100", longitude: -33.0, latitude: -7.0, description: "Skirting the coast of Bahia, navigating the South Atlantic currents.", type: "Road" },
-    { name: "Offshore Point 101", longitude: -39.0, latitude: -19.0, description: "Approaching the port of Santos, preparing for entry and berthing procedures.", type: "Road" },
+  { name: "Offshore Point 91", longitude: -74.0, latitude: 13.0, description: "Navigating southeast along the Caribbean coast of Colombia.", type: "Road" },
+    { name: "Offshore Point 92", longitude: -70.0, latitude: 13.0, description: "Passing the Guajira Peninsula, moving towards the open Atlantic waters.", type: "Road" },
+    { name: "Offshore Point 93", longitude: -65.0, latitude: 12.0, description: "Approaching the northeastern coast of Venezuela.", type: "Road" },
+    { name: "Offshore Point 94", longitude: -60.0, latitude: 11.0, description: "Sailing past the Orinoco River delta, avoiding shallow waters and river outflows.", type: "Road" },
+    { name: "Offshore Point 95", longitude: -55.0, latitude: 8.0, description: "Navigating clear of the Amazon River delta and the coastal waters of Guyana.", type: "Road" },
+    { name: "Offshore Point 96", longitude: -50.0, latitude: 6, description: "Entering Brazilian waters, moving along the coast of Amapá and Pará.", type: "Road" },
+    { name: "Offshore Point 97", longitude: -46.0, latitude: 4.0, description: "Continuing down the northern coast of Brazil, past the state of Maranhão.", type: "Road" },
+    { name: "Offshore Point 98", longitude: -42.0, latitude: 1.0, description: "Sailing along the northeastern coast of Brazil, bypassing the states of Piauí and Ceará.", type: "Road" },
+    { name: "Offshore Point 99", longitude: -36.0, latitude: -2.0, description: "Passing the easternmost point of South America, Cape São Roque.", type: "Road" },
+    { name: "Offshore Point 100", longitude: -33.0, latitude: -6.0, description: "Skirting the coast of Bahia, navigating the South Atlantic currents.", type: "Road" },
+    { name: "Offshore Point 101", longitude: -39.0, latitude: -18.0, description: "Approaching the port of Santos, preparing for entry and berthing procedures.", type: "Road" },
 {
     "name": "Brazil",
     "longitude": -39.8,
@@ -268,15 +284,15 @@ const waypoints = [
     "description": "<div><h1>Brazil:</h1><p>La gastronomía de Brasil es un exuberante festín de sabores y texturas, con platos como la feijoada, moqueca, y caipirinha, reflejando la diversidad cultural del país, en una cocina que vibra con la alegría y el color de su gente.</p><ul><li>L'Samba Rodizio: El asador será colocado en un área del restaurante a la vista del comensal protegido con cristal para evitar la fuerte filtración de olores. Además, montará un salad bar para self-service.</li></ul></div>",
     "type": "Interest"
 },
-    { name: "Offshore Point 103", longitude: -39.0, latitude: -19.0, description: "Approaching the port of Santos, preparing for entry and berthing procedures.", type: "Road" },
-    { name: "Offshore Point 104", longitude: -33.0, latitude: -7.0, description: "Skirting the coast of Bahia, navigating the South Atlantic currents.", type: "Road" },
-    { name: "Offshore Point 105", longitude: -32.0, latitude: -3.0, description: "Passing the easternmost point of South America, Cape São Roque.", type: "Road" },
-    { name: "Offshore Point 106", longitude: -42.0, latitude: -0.0, description: "Sailing along the northeastern coast of Brazil, bypassing the states of Piauí and Ceará.", type: "Road" },
-    { name: "Offshore Point 107", longitude: -46.0, latitude: 3.0, description: "Continuing down the northern coast of Brazil, past the state of Maranhão.", type: "Road" },
-    { name: "Offshore Point 108", longitude: -50.0, latitude: 5.0, description: "Entering Brazilian waters, moving along the coast of Amapá and Pará.", type: "Road" },
-    { name: "Offshore Point 109", longitude: -55.0, latitude: 7.0, description: "Navigating clear of the Amazon River delta and the coastal waters of Guyana.", type: "Road" },
-    { name: "Offshore Point 110", longitude: -60.0, latitude: 9.0, description: "Sailing past the Orinoco River delta, avoiding shallow waters and river outflows.", type: "Road" },
-    { name: "Offshore Point 111", longitude: -65.0, latitude: 11.0, description: "Approaching the northeastern coast of Venezuela.", type: "Road" },
+    { name: "Offshore Point 103", longitude: -39.0, latitude: -18.0, description: "Approaching the port of Santos, preparing for entry and berthing procedures.", type: "Road" },
+    { name: "Offshore Point 104", longitude: -33.0, latitude: -6.0, description: "Skirting the coast of Bahia, navigating the South Atlantic currents.", type: "Road" },
+    { name: "Offshore Point 105", longitude: -36.0, latitude: -2.0, description: "Passing the easternmost point of South America, Cape São Roque.", type: "Road" },
+    { name: "Offshore Point 106", longitude: -42.0, latitude: 1.0, description: "Sailing along the northeastern coast of Brazil, bypassing the states of Piauí and Ceará.", type: "Road" },
+    { name: "Offshore Point 107", longitude: -46.0, latitude: 4.0, description: "Continuing down the northern coast of Brazil, past the state of Maranhão.", type: "Road" },
+    { name: "Offshore Point 108", longitude: -50.0, latitude: 6.0, description: "Entering Brazilian waters, moving along the coast of Amapá and Pará.", type: "Road" },
+    { name: "Offshore Point 109", longitude: -55.0, latitude: 8.0, description: "Navigating clear of the Amazon River delta and the coastal waters of Guyana.", type: "Road" },
+    { name: "Offshore Point 110", longitude: -60.0, latitude: 11.0, description: "Sailing past the Orinoco River delta, avoiding shallow waters and river outflows.", type: "Road" },
+    { name: "Offshore Point 111", longitude: -65.0, latitude: 12.0, description: "Approaching the northeastern coast of Venezuela.", type: "Road" },
 {
     "name": "Santo Domingo, DR",
     "longitude": -69.7,
@@ -298,9 +314,21 @@ var shipModel = viewer.entities.add({
     model: {
         uri: 'https://raw.githubusercontent.com/jgzalez/SimulacionRutaCulinariaCOL/main/yatch_II.glb',
         minimumPixelSize: 128,
-        maximumScale: 2500
+        maximumScale: 3000
     }
 });
+
+// Calculate total distance
+let totalDistance = 0;
+for (let i = 1; i < waypoints.length; i++) {
+    totalDistance += calculateDistanceOnEarth(
+        waypoints[i - 1].latitude, waypoints[i - 1].longitude,
+        waypoints[i].latitude, waypoints[i].longitude
+    );
+}
+
+// Calculate total duration required at constant speed (in seconds)
+let totalDurationSeconds = totalDistance / speedMS;
 
 // Configuras las propiedades de animación y posición del barco
 var positionProperty = new Cesium.SampledPositionProperty();
@@ -326,12 +354,24 @@ var travelTimeHours = waypoints.length * 2; // Adjust based on desired speed and
 
 Cesium.JulianDate.addHours(startTime, travelTimeHours, stopTime);
 
+let cumulativeDistance = 0;
 waypoints.forEach((point, index) => {
-    var timeFraction = index / (waypoints.length - 1);
-    var time = Cesium.JulianDate.addHours(startTime, travelTimeHours * timeFraction, new Cesium.JulianDate());
-    positionProperty.addSample(time, Cesium.Cartesian3.fromDegrees(point.longitude, point.latitude, 0)); // Ensure altitude is 0 for sea level
+    if (index > 0) {
+        cumulativeDistance += calculateDistanceOnEarth(
+            waypoints[index - 1].latitude, waypoints[index - 1].longitude,
+            point.latitude, point.longitude
+        );
+    }
+    
+    // Calculate the time offset for this waypoint based on distance
+    let timeOffsetSeconds = (cumulativeDistance / totalDistance) * totalDurationSeconds;
+    let waypointTime = Cesium.JulianDate.addSeconds(startTime, timeOffsetSeconds, new Cesium.JulianDate());
+    
+    positionProperty.addSample(waypointTime, Cesium.Cartesian3.fromDegrees(point.longitude, point.latitude));
 });
 
+// Update stopTime based on total duration
+Cesium.JulianDate.addSeconds(startTime, totalDurationSeconds, stopTime);
 // Assign the animated position and orientation to the ship model.
 shipModel.position = positionProperty;
 // Set a basic orientation (heading) for the ship based on its path.
@@ -398,6 +438,12 @@ viewer.scene.postRender.addEventListener(function () {
     });
 });
 
+function resumeAnimation() {
+  if (!viewer.clock.shouldAnimate) {
+    viewer.clock.shouldAnimate = true; // Esto reanuda la animación
+    console.log("Animación reanudada.");
+  }
+}
 
 
 function checkSimulationState() {
@@ -457,7 +503,7 @@ function checkWaypointProximityAndSelect() {
             viewer.clock.shouldAnimate = false; // Stop the animation
             lastNearestWaypoint = nearestWaypoint; // Update lastNearestWaypoint to prevent repetitive updates
         }
-    } else if (!isInterestPoint || nearestDistance >= 300000) {
+    } else if (!isInterestPoint || nearestDistance >= 400000) {
         // If the nearest waypoint is not an interest point or is beyond the threshold distance
         if (viewer.selectedEntity) {
             viewer.selectedEntity = undefined; // Clear the selected entity
@@ -471,7 +517,7 @@ function checkWaypointProximityAndSelect() {
 
 
 // Regularly check for proximity to update the infoBox accordingly
-setInterval(checkWaypointProximityAndSelect, 1000);  // Check every second
+setInterval(checkWaypointProximityAndSelect, 500);  // Check every second
 function updateWaypointEntities() {
     waypoints.forEach(waypoint => {
         // Create a unique id for each waypoint entity for identification
@@ -555,6 +601,8 @@ function getCountryCodeFromName(name) {
 updateWaypointEntities();
 
 // Assuming you have your waypoints array and a Cesium viewer instance
+
+
 waypoints.forEach((waypoint) => {
     if (waypoint.type === "Road") {
         // Add a point for each road waypoint
@@ -570,6 +618,7 @@ waypoints.forEach((waypoint) => {
     }
 });
 
+
 // Call checkWaypointProximity periodically, for example, using setInterval
 setInterval(() => {
     var shipPosition = shipModel.position.getValue(viewer.clock.currentTime);
@@ -581,4 +630,4 @@ setInterval(() => {
     } else {
         console.log("Current ship position: Undefined");
     }
-}, 5000); // Adjust the interval as needed
+}, 3000); // Adjust the interval as needed
