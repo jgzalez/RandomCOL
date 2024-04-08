@@ -1,4 +1,3 @@
-
 const viewer = new Cesium.Viewer("cesiumContainer", {
     sceneMode: Cesium.SceneMode.SCENE3D,
     infobox: true,      // Keep the infobox
@@ -100,7 +99,6 @@ const waypoints = [
   { name: "Offshore Point 17", longitude: 105.2, latitude: 5.5, description: "Heading southwest, moving away from the Gulf of Thailand into open sea.", type: "Road" },
     { name: "Offshore Point 19", longitude: 105.0, latitude: 1.0, description: "Further into the Andaman Sea, avoiding landmasses.", type: "Road" },
     { name: "Offshore Point 21", longitude: 103.0, latitude: 1.2, description: "Approaching the northern tip of Sumatra, continuing on a clear maritime path.", type: "Road" },
-    { name: "Offshore Point 23", longitude: 101.0, latitude: 3, description: "Midway through the Strait of Malacca, maintaining a safe distance from land.", type: "Road" },
 {
     "name": "Port Klang, Malaysia",
     "longitude": 101.3929,
@@ -134,7 +132,7 @@ const waypoints = [
     { name: "Offshore Point 38", longitude: 57.0, latitude: 25.0, description: "Navigating the Strait of Hormuz, between Oman and Iran.", type: "Road" },
 {
     "name": "Middle East",
-    "longitude": 55.8708,
+    "longitude": 57,
     "latitude": 25.2048,
     "description": "<div><h1>Medio Oriente:</h1><p>La gastronomía del Medio Oriente es un festín de sabores ricos y texturas variadas, destacando platos como:</p><ol><li>El Hummus</li><li>Los Kebabs</li><li>El Falafel</li></ol><p>En una tradición culinaria que celebra el uso generoso de especias y hierbas, y la importancia de compartir la comida.</p></div>",
     "type": "Interest"
@@ -142,22 +140,20 @@ const waypoints = [
     // Waypoints from Middle East to Italy
       { name: "Offshore Point 31", longitude: 57.0, latitude: 25.0, description: "Exiting the Arabian Gulf, entering the Gulf of Oman.", type: "Road" },
     { name: "Offshore Point 39", longitude: 60.0, latitude: 23.0, description: "Leaving the Persian Gulf, entering the Gulf of Oman.", type: "Road" },
-    { name: "Offshore Point 41", longitude: 60.0, latitude: 22.0, description: "Out into the Arabian Sea, making a course for the Indian Ocean.", type: "Road" },
     
   { name: "Offshore Point 42", longitude: 62.0, latitude: 21.0, description: "Passing by the southern coast of Iran.", type: "Road" },
       { name: "Offshore Point 40", longitude: 55.0, latitude: 15.0, description: "Navigating along the coast of Oman, heading towards the Arabian Sea.", type: "Road" },
-  
-    { name: "Offshore Point 44", longitude: 44.0, latitude: 12.0, description: "Entering the Gulf of Aden, between Yemen and Djibouti.", type: "Road" },
-    { name: "Offshore Point 45", longitude: 41.0, latitude: 14.7, description: "Sailing westward through the Bab-el-Mandeb Strait into the Red Sea.", type: "Road" },
-    { name: "Offshore Point 46", longitude: 39.0, latitude: 21.0, description: "Navigating the Red Sea, heading towards the Suez Canal.", type: "Road" },
+      { name: "Offshore Point 40", longitude: 50.0, latitude: 13.0, description: "Navigating along the coast of Oman, heading towards the Arabian Sea.", type: "Road" },
+
+  { name: "Offshore Point 442", longitude: 45.0, latitude: 12.0, description: "Entering the Gulf of Aden, between Yemen and Djibouti.", type: "Road" },
+
+    { name: "Offshore Point 45", longitude: 42.0, latitude: 14.7, description: "Sailing westward through the Bab-el-Mandeb Strait into the Red Sea.", type: "Road" },
+    { name: "Offshore Point 46", longitude: 38.0, latitude: 21.0, description: "Navigating the Red Sea, heading towards the Suez Canal.", type: "Road" },
     { name: "Suez Canal Entrance", longitude: 32.532, latitude: 29.947, description: "Approaching the Suez Canal from the Red Sea.", type: "Road" },
-    { name: "Suez Canal Exit", longitude: 32.349, latitude: 31.265, description: "Exiting the Suez Canal, entering the Mediterranean Sea.", type: "Road" },
+    { name: "Suez Canal Exit2", longitude: 30.4, latitude: 33, description: "Exiting the Suez Canal, entering the Mediterranean Sea.", type: "Road" },
 
     // Waypoints from Suez Canal to Italy
-    { name: "Offshore Point 47", longitude: 30.0, latitude: 33.0, description: "Passing by the northern coast of Egypt.", type: "Road" },
     { name: "Offshore Point 48", longitude: 25.0, latitude: 35.0, description: "Crossing the Mediterranean, north of Libya.", type: "Road" },
-    { name: "Offshore Point 49", longitude: 20.0, latitude: 37.0, description: "Navigating past the southern region of Greece.", type: "Road" },
-    { name: "Offshore Point 50", longitude: 18.0, latitude: 39.0, description: "Approaching the heel of Italy's boot.", type: "Road" },
     { name: "Offshore Point 51", longitude: 17.0, latitude: 33.0, description: "Skirting the eastern coast of Italy.", type: "Road" },
     { name: "Offshore Point 401", longitude: 14.0, latitude: 35.0, description: "Approaching the southern tip of Italy, preparing for the final leg to Genoa.", type: "Road" },
 {
@@ -171,7 +167,7 @@ const waypoints = [
     { name: "Offshore Point 421", longitude: 5.0, latitude: 40.0, description: "Approaching the French Riviera, near Nice and Monaco.", type: "Road" },
     { name: "Offshore Point 431", longitude: 3.0, latitude: 39.0, description: "Passing by the Balearic Islands in the western Mediterranean.", type: "Road" },
     { name: "Offshore Point 441", longitude: 0.5, latitude: 38.0, description: "Crossing the sea near Valencia, Spain, heading towards the Strait of Gibraltar.", type: "Road" },
-    { name: "Offshore Point 451", longitude: -5.0, latitude: 36.0, description: "Entering the Strait of Gibraltar, the gateway between the Mediterranean Sea and the Atlantic Ocean.", type: "Road" },
+    { name: "Offshore Point 451", longitude: -3.0, latitude: 36.0, description: "Entering the Strait of Gibraltar, the gateway between the Mediterranean Sea and the Atlantic Ocean.", type: "Road" },
     { name: "Offshore Point 461", longitude: -9.0, latitude: 36.0, description: "Navigating off the southern coast of Portugal, near the Algarve region.", type: "Road" },
     { name: "Offshore Point 471", longitude: -11.0, latitude: 38.5, description: "Approaching Lisbon, preparing for arrival at the port.", type: "Road" },
 {
@@ -209,7 +205,7 @@ const waypoints = [
   { name: "Offshore Point 66", longitude: 7.0, latitude: 55.0, description: "Leaving the North Sea, entering the Norwegian Sea.", type: "Road" },
     { name: "Offshore Point 67", longitude: -1.0, latitude: 59.0, description: "Navigating past the northern tip of the British Isles into the open Atlantic.", type: "Road" },
     { name: "Offshore Point 68", longitude: -3.0, latitude: 60.0, description: "Crossing the northern Atlantic, moving between Iceland and the Faroe Islands.", type: "Road" },
-    { name: "Offshore Point 69", longitude: -40.0, latitude: 55.0, description: "Mid-Atlantic route, halfway between Europe and North America.", type: "Road" },
+    { name: "Offshore Point 69", longitude: -43.0, latitude: 55.0, description: "Mid-Atlantic route, halfway between Europe and North America.", type: "Road" },
     { name: "Offshore Point 70", longitude: -50.0, latitude: 50.0, description: "Approaching Canadian waters, navigating through cooler northern currents.", type: "Road" },
     { name: "Offshore Point 71", longitude: -55.0, latitude: 45.0, description: "Entering the approaches to the Gulf of Saint Lawrence.", type: "Road" },
     { name: "Offshore Point 72", longitude: -60.0, latitude: 44.0, description: "Passing by Sable Island, preparing for the final approach to Halifax.", type: "Road" },
@@ -400,12 +396,6 @@ viewer.scene.postRender.addEventListener(function () {
     });
 });
 
-function resumeAnimation() {
-  if (!viewer.clock.shouldAnimate) {
-    viewer.clock.shouldAnimate = true; // Esto reanuda la animación
-    console.log("Animación reanudada.");
-  }
-}
 
 
 function checkSimulationState() {
