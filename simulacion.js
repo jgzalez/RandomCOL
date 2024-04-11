@@ -140,8 +140,8 @@ const waypoints = [
 },
   
   
-     { name: "Offshore Point 31", longitude: 79.0, latitude: 9.0, description: "Leaving the Bay of Bengal, rounding the Indian Peninsula.", type: "Road" },
-    { name: "Offshore Point 33", longitude: 72.0, latitude: 11.0, description: "Entering the Arabian Sea, west of the Maldives.", type: "Road" },
+     { name: "Offshore Point 31", longitude: 79.5, latitude: 9.0, description: "Leaving the Bay of Bengal, rounding the Indian Peninsula.", type: "Road" },
+    { name: "Offshore Point 33", longitude: 76.0, latitude: 7.5, description: "Entering the Arabian Sea, west of the Maldives.", type: "Road" },
     { name: "Offshore Point 34", longitude: 70.0, latitude: 12.0, description: "Sailing northwest, approaching the Indian west coast.", type: "Road" },
     { name: "Offshore Point 35", longitude: 68.0, latitude: 15.0, description: "Moving along the western coast of India, passing Mumbai.", type: "Road" },
     { name: "Offshore Point 36", longitude: 65.0, latitude: 20.0, description: "Continuing through the Arabian Sea, clear of the Indian coast.", type: "Road" },
@@ -164,16 +164,19 @@ const waypoints = [
   { name: "Offshore Point 40", longitude: 55.0, latitude: 15.0, description: "Navigating along the coast of Oman, heading towards the Arabian Sea.", type: "Road" },
   
     { name: "Offshore Point 44", longitude: 48.0, latitude: 11.8, description: "Entering the Gulf of Aden, between Yemen and Djibouti.", type: "Road" },
-    { name: "Offshore Point 45", longitude: 41.0, latitude: 14.7, description: "Sailing westward through the Bab-el-Mandeb Strait into the Red Sea.", type: "Road" },
-    { name: "Offshore Point 46", longitude: 39.0, latitude: 21.0, description: "Navigating the Red Sea, heading towards the Suez Canal.", type: "Road" },
-    { name: "Suez Canal Entrance", longitude: 32.532, latitude: 29.947, description: "Approaching the Suez Canal from the Red Sea.", type: "Road" },
+      { name: "Offshore Point 4555", longitude: 43.6, latitude: 12.3, description: "Sailing westward through the Bab-el-Mandeb Strait into the Red Sea.", type: "Road" },
+
+  { name: "Offshore Point 45", longitude: 41.6, latitude: 14.7, description: "Sailing westward through the Bab-el-Mandeb Strait into the Red Sea.", type: "Road" },
+    { name: "Offshore Point 46", longitude: 38.5, latitude: 21.0, description: "Navigating the Red Sea, heading towards the Suez Canal.", type: "Road" },
+    { name: "Suez Canal Pre-Entrance", longitude: 33.6, latitude: 27.947, description: "Approaching the Suez Canal from the Red Sea.", type: "Road" },
+  { name: "Suez Canal Entrance", longitude: 32.532, latitude: 29.947, description: "Approaching the Suez Canal from the Red Sea.", type: "Road" },
     { name: "Suez Canal Exit", longitude: 32.349, latitude: 32, description: "Exiting the Suez Canal, entering the Mediterranean Sea.", type: "Road" },
 
     // Waypoints from Suez Canal to Italy
-    { name: "Offshore Point 47", longitude: 30.0, latitude: 33.0, description: "Passing by the northern coast of Egypt.", type: "Road" },
-    { name: "Offshore Point 48", longitude: 25.0, latitude: 36.5, description: "Crossing the Mediterranean, north of Libya.", type: "Road" },
-    { name: "Offshore Point 51", longitude: 17.0, latitude: 33.0, description: "Skirting the eastern coast of Italy.", type: "Road" },
-    { name: "Offshore Point 401", longitude: 14.0, latitude: 35.0, description: "Approaching the southern tip of Italy, preparing for the final leg to Genoa.", type: "Road" },
+    { name: "Offshore Point 47", longitude: 30.0, latitude: 33.5, description: "Passing by the northern coast of Egypt.", type: "Road" },
+    { name: "Offshore Point 48", longitude: 25.0, latitude: 33.5, description: "Crossing the Mediterranean, north of Libya.", type: "Road" },
+    { name: "Offshore Point 51", longitude: 17.0, latitude: 32.0, description: "Skirting the eastern coast of Italy.", type: "Road" },
+    { name: "Offshore Point 401", longitude: 13.0, latitude: 35.0, description: "Approaching the southern tip of Italy, preparing for the final leg to Genoa.", type: "Road" },
 {
     "name": "Genoa, Italy",
     "longitude": 8.9463,
@@ -224,7 +227,7 @@ const waypoints = [
     { name: "Offshore Point 67", longitude: -1.0, latitude: 59.0, description: "Navigating past the northern tip of the British Isles into the open Atlantic.", type: "Road" },
     { name: "Offshore Point 68", longitude: -3.0, latitude: 60.0, description: "Crossing the northern Atlantic, moving between Iceland and the Faroe Islands.", type: "Road" },
     { name: "Offshore Point 69", longitude: -40.0, latitude: 55.0, description: "Mid-Atlantic route, halfway between Europe and North America.", type: "Road" },
-    { name: "Offshore Point 70", longitude: -50.0, latitude: 50.0, description: "Approaching Canadian waters, navigating through cooler northern currents.", type: "Road" },
+    { name: "Offshore Point 70", longitude: -50.0, latitude: 47.0, description: "Approaching Canadian waters, navigating through cooler northern currents.", type: "Road" },
     { name: "Offshore Point 71", longitude: -55.0, latitude: 45.0, description: "Entering the approaches to the Gulf of Saint Lawrence.", type: "Road" },
     { name: "Offshore Point 72", longitude: -60.0, latitude: 44.0, description: "Passing by Sable Island, preparing for the final approach to Halifax.", type: "Road" },
 {
@@ -602,7 +605,7 @@ updateWaypointEntities();
 
 // Assuming you have your waypoints array and a Cesium viewer instance
 
-
+/*
 waypoints.forEach((waypoint) => {
     if (waypoint.type === "Road") {
         // Add a point for each road waypoint
@@ -617,7 +620,7 @@ waypoints.forEach((waypoint) => {
         });
     }
 });
-
+*/
 
 // Call checkWaypointProximity periodically, for example, using setInterval
 setInterval(() => {
